@@ -4,213 +4,63 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   LayoutDashboard, Settings, Globe, Home, FileText, Palette,
   Search, Users, Activity, LogOut, ChevronRight, Save, Trash2,
-  RefreshCw, Shield, Wifi, MessageSquare, X, Check,
+  RefreshCw, Shield, MessageSquare, X, Check, Star, Package,
+  Server, Image as ImageIcon, Menu, Zap, BookOpen,
 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
+import ReviewsManager  from "@/components/admin/ReviewsManager";
+import PlansManager    from "@/components/admin/PlansManager";
+import ServicesManager from "@/components/admin/ServicesManager";
+import DocsManager     from "@/components/admin/DocsManager";
+import MediaManager    from "@/components/admin/MediaManager";
+import { Toast, ConfirmDialog, GlassInput, GlassTextarea, Card, SectionHeader, SaveButton } from "@/components/admin/shared";
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
 interface AdminStats {
-  totalUsers: number; totalLogs: number; totalServices: number;
+  totalUsers: number; totalLogs: number; totalReviews: number;
+  totalPlans: number; totalDocs: number; totalServices: number;
   totalLocations: number; websiteStatus: string; discordStatus: string;
 }
-interface UserRow {
-  id: number; username: string; email: string; createdAt: string;
-}
-interface LogRow {
-  id: number; action: string; details: string | null; adminEmail: string; createdAt: string;
-}
+interface UserRow  { id: number; username: string; email: string; createdAt: string; }
+interface LogRow   { id: number; action: string; details: string | null; adminEmail: string; createdAt: string; }
 
-// ─── Sidebar sections ──────────────────────────────────────────────────────────
-const NAV = [
-  { id: "dashboard",   label: "Dashboard",       icon: LayoutDashboard },
-  { id: "discord",     label: "Discord Settings", icon: MessageSquare },
-  { id: "homepage",    label: "Homepage",         icon: Home },
-  { id: "network",     label: "Network",          icon: Globe },
-  { id: "docs",        label: "Docs Manager",     icon: FileText },
-  { id: "appearance",  label: "Appearance",       icon: Palette },
-  { id: "seo",         label: "SEO",              icon: Search },
-  { id: "users",       label: "Users",            icon: Users },
-  { id: "logs",        label: "Activity Logs",    icon: Activity },
+// ─── Sidebar nav ───────────────────────────────────────────────────────────────
+const NAV_GROUPS = [
+  {
+    label: "Overview",
+    items: [
+      { id: "dashboard", label: "Dashboard",    icon: LayoutDashboard },
+    ],
+  },
+  {
+    label: "Content",
+    items: [
+      { id: "reviews",  label: "Reviews",       icon: Star },
+      { id: "plans",    label: "Plans",         icon: Package },
+      { id: "services", label: "Services",      icon: Server },
+      { id: "docs",     label: "Docs",          icon: BookOpen },
+      { id: "media",    label: "Media",         icon: ImageIcon },
+    ],
+  },
+  {
+    label: "Editors",
+    items: [
+      { id: "homepage", label: "Homepage",      icon: Home },
+      { id: "ddos",     label: "DDoS Editor",   icon: Shield },
+      { id: "network",  label: "Network",       icon: Globe },
+    ],
+  },
+  {
+    label: "System",
+    items: [
+      { id: "users",    label: "Users",         icon: Users },
+      { id: "settings", label: "Settings",      icon: Settings },
+      { id: "logs",     label: "Activity Logs", icon: Activity },
+    ],
+  },
 ];
 
-// ─── Toast ────────────────────────────────────────────────────────────────────
-function Toast({ msg, type, onClose }: { msg: string; type: "success" | "error"; onClose: () => void }) {
-  useEffect(() => { const t = setTimeout(onClose, 3500); return () => clearTimeout(t); }, [onClose]);
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24, scale: 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, y: 12, scale: 0.95 }}
-      transition={{ duration: 0.25 }}
-      className="fixed bottom-6 right-6 z-[9999] flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-white shadow-2xl"
-      style={{
-        background: type === "success" ? "linear-gradient(135deg,rgba(16,185,129,0.2),rgba(5,150,105,0.2))" : "linear-gradient(135deg,rgba(239,68,68,0.2),rgba(185,28,28,0.2))",
-        border: `1px solid ${type === "success" ? "rgba(16,185,129,0.4)" : "rgba(239,68,68,0.4)"}`,
-        backdropFilter: "blur(20px)",
-      }}
-    >
-      {type === "success" ? <Check size={15} className="text-emerald-400 shrink-0" /> : <X size={15} className="text-red-400 shrink-0" />}
-      {msg}
-      <button onClick={onClose} className="ml-2 text-white/40 hover:text-white/80"><X size={12} /></button>
-    </motion.div>
-  );
-}
-
-// ─── Confirm Dialog ───────────────────────────────────────────────────────────
-function ConfirmDialog({ msg, onConfirm, onCancel }: { msg: string; onConfirm: () => void; onCancel: () => void }) {
-  return (
-    <div className="fixed inset-0 z-[9998] flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="rounded-2xl p-6 max-w-sm w-full mx-4"
-        style={{ background: "linear-gradient(135deg,rgba(8,14,36,0.98),rgba(5,9,24,0.99))", border: "1px solid rgba(239,68,68,0.3)", backdropFilter: "blur(24px)" }}>
-        <div className="text-white font-semibold mb-2">Confirm Action</div>
-        <p className="text-white/55 text-sm mb-6">{msg}</p>
-        <div className="flex gap-3">
-          <button onClick={onCancel} className="flex-1 h-9 rounded-lg border border-white/10 bg-white/5 text-sm text-white/70 hover:text-white transition-colors">Cancel</button>
-          <button onClick={onConfirm} className="flex-1 h-9 rounded-lg text-sm font-semibold text-white transition-all" style={{ background: "linear-gradient(135deg,#dc2626,#b91c1c)" }}>Delete</button>
-        </div>
-      </motion.div>
-    </div>
-  );
-}
-
-// ─── Glass input ──────────────────────────────────────────────────────────────
-function GlassInput({ label, value, onChange, type = "text", placeholder }: { label: string; value: string; onChange: (v: string) => void; type?: string; placeholder?: string }) {
-  return (
-    <div>
-      <label className="block text-xs font-semibold text-white/40 uppercase tracking-widest mb-1.5">{label}</label>
-      <input
-        type={type}
-        value={value}
-        onChange={e => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-white/25 outline-none transition-all"
-        style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
-        onFocus={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.45)"; }}
-        onBlur={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)"; }}
-      />
-    </div>
-  );
-}
-
-function GlassTextarea({ label, value, onChange, rows = 3, placeholder }: { label: string; value: string; onChange: (v: string) => void; rows?: number; placeholder?: string }) {
-  return (
-    <div>
-      <label className="block text-xs font-semibold text-white/40 uppercase tracking-widest mb-1.5">{label}</label>
-      <textarea
-        value={value}
-        onChange={e => onChange(e.target.value)}
-        rows={rows}
-        placeholder={placeholder}
-        className="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-white/25 outline-none transition-all resize-none"
-        style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
-        onFocus={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(99,102,241,0.45)"; }}
-        onBlur={e => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.08)"; }}
-      />
-    </div>
-  );
-}
-
-// ─── Card ─────────────────────────────────────────────────────────────────────
-function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) {
-  return (
-    <div className={`rounded-2xl p-6 ${className}`}
-      style={{ background: "linear-gradient(135deg,rgba(10,18,48,0.75),rgba(6,10,28,0.85))", border: "1px solid rgba(59,130,246,0.14)", backdropFilter: "blur(20px)" }}>
-      {children}
-    </div>
-  );
-}
-
-function SectionHeader({ title, subtitle }: { title: string; subtitle?: string }) {
-  return (
-    <div className="mb-8">
-      <h2 className="text-2xl font-bold text-white mb-1">{title}</h2>
-      {subtitle && <p className="text-white/40 text-sm">{subtitle}</p>}
-    </div>
-  );
-}
-
-function SaveButton({ loading, onClick, label = "Save Changes" }: { loading?: boolean; onClick: () => void; label?: string }) {
-  return (
-    <button onClick={onClick} disabled={loading}
-      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white transition-all disabled:opacity-60"
-      style={{ background: "linear-gradient(135deg,#2563eb,#7c3aed)", boxShadow: "0 0 20px rgba(99,102,241,0.3)" }}>
-      {loading ? <RefreshCw size={14} className="animate-spin" /> : <Save size={14} />}
-      {loading ? "Saving..." : label}
-    </button>
-  );
-}
-
-// ─── Dashboard Section ────────────────────────────────────────────────────────
-function DashboardSection({ stats }: { stats: AdminStats | null }) {
-  const cards = [
-    { emoji: "👥", label: "Total Users", value: stats?.totalUsers ?? "—", color: "#3b82f6" },
-    { emoji: "🌐", label: "Active Locations", value: stats?.totalLocations ?? 3, color: "#22c55e" },
-    { emoji: "🛠️", label: "Hosting Services", value: stats?.totalServices ?? 6, color: "#8b5cf6" },
-    { emoji: "💬", label: "Discord Status", value: stats?.discordStatus ?? "—", color: "#5865f2" },
-    { emoji: "🌍", label: "Website Status", value: stats?.websiteStatus ?? "—", color: "#22c55e" },
-    { emoji: "📋", label: "Activity Logs", value: stats?.totalLogs ?? "—", color: "#f59e0b" },
-  ];
-  return (
-    <div>
-      <SectionHeader title="Dashboard" subtitle="Overview of your BruteScale admin panel" />
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        {cards.map((c, i) => (
-          <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}>
-            <Card>
-              <div className="text-2xl mb-3">{c.emoji}</div>
-              <div className="text-2xl font-bold text-white mb-1" style={{ color: c.color }}>{c.value}</div>
-              <div className="text-white/40 text-xs font-medium uppercase tracking-wide">{c.label}</div>
-            </Card>
-          </motion.div>
-        ))}
-      </div>
-      <Card>
-        <div className="flex items-center gap-3 mb-4">
-          <Shield size={18} className="text-emerald-400" />
-          <span className="text-white font-semibold">System Status</span>
-        </div>
-        <div className="space-y-3">
-          {[
-            { label: "API Server", status: "Operational", color: "#22c55e" },
-            { label: "Database", status: "Operational", color: "#22c55e" },
-            { label: "Authentication", status: "Operational", color: "#22c55e" },
-            { label: "Admin Panel", status: "Operational", color: "#22c55e" },
-          ].map(s => (
-            <div key={s.label} className="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
-              <span className="text-white/60 text-sm">{s.label}</span>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ color: s.color, background: `${s.color}18`, border: `1px solid ${s.color}30` }}>{s.status}</span>
-            </div>
-          ))}
-        </div>
-      </Card>
-    </div>
-  );
-}
-
-// ─── Settings Form Section ────────────────────────────────────────────────────
-function SettingsSection({
-  title, subtitle, fields, values, onChange, onSave, saving,
-}: {
-  title: string; subtitle?: string;
-  fields: { key: string; label: string; type?: string; placeholder?: string; textarea?: boolean; rows?: number }[];
-  values: Record<string, string>; onChange: (k: string, v: string) => void;
-  onSave: () => void; saving: boolean;
-}) {
-  return (
-    <div>
-      <SectionHeader title={title} subtitle={subtitle} />
-      <Card>
-        <div className="space-y-5 mb-6">
-          {fields.map(f => f.textarea
-            ? <GlassTextarea key={f.key} label={f.label} value={values[f.key] ?? ""} onChange={v => onChange(f.key, v)} rows={f.rows} placeholder={f.placeholder} />
-            : <GlassInput key={f.key} label={f.label} value={values[f.key] ?? ""} onChange={v => onChange(f.key, v)} type={f.type} placeholder={f.placeholder} />
-          )}
-        </div>
-        <SaveButton loading={saving} onClick={onSave} />
-      </Card>
-    </div>
-  );
-}
+const ALL_NAV = NAV_GROUPS.flatMap(g => g.items);
 
 // ─── Users Section ────────────────────────────────────────────────────────────
 function UsersSection({ token }: { token: string }) {
@@ -256,7 +106,7 @@ function UsersSection({ token }: { token: string }) {
               className="w-full pl-9 pr-4 py-2 rounded-lg text-sm text-white placeholder-white/25 outline-none"
               style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }} />
           </div>
-          <button onClick={load} className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs text-white/50 hover:text-white border border-white/10 hover:border-white/20 transition-colors">
+          <button onClick={load} className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs text-white/50 hover:text-white border border-white/10 transition-colors">
             <RefreshCw size={12} /> Refresh
           </button>
         </div>
@@ -267,10 +117,9 @@ function UsersSection({ token }: { token: string }) {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-white/8">
-                  <th className="text-left py-3 px-2 text-xs font-semibold text-white/30 uppercase tracking-wide">User</th>
-                  <th className="text-left py-3 px-2 text-xs font-semibold text-white/30 uppercase tracking-wide">Email</th>
-                  <th className="text-left py-3 px-2 text-xs font-semibold text-white/30 uppercase tracking-wide hidden sm:table-cell">Joined</th>
-                  <th className="py-3 px-2" />
+                  {["User","Email","Joined",""].map(h => (
+                    <th key={h} className={`text-left py-3 px-2 text-xs font-semibold text-white/30 uppercase tracking-wide${h === "Joined" ? " hidden sm:table-cell" : ""}`}>{h}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
@@ -330,8 +179,7 @@ function LogsSection({ token }: { token: string }) {
     const r = await fetch("/api/admin/logs", { method: "DELETE", headers: { Authorization: `Bearer ${token}` } });
     if (r.ok) { setLogs([]); setToast({ msg: "Logs cleared.", type: "success" }); }
     else setToast({ msg: "Failed to clear logs.", type: "error" });
-    setClearing(false);
-    setConfirm(false);
+    setClearing(false); setConfirm(false);
   };
 
   const actionColor = (a: string) => {
@@ -382,6 +230,102 @@ function LogsSection({ token }: { token: string }) {
   );
 }
 
+// ─── Settings Form Section ────────────────────────────────────────────────────
+function SettingsSection({
+  title, subtitle, fields, values, onChange, onSave, saving,
+}: {
+  title: string; subtitle?: string;
+  fields: { key: string; label: string; type?: string; placeholder?: string; textarea?: boolean; rows?: number }[];
+  values: Record<string, string>; onChange: (k: string, v: string) => void;
+  onSave: () => void; saving: boolean;
+}) {
+  return (
+    <div>
+      <SectionHeader title={title} subtitle={subtitle} />
+      <Card>
+        <div className="space-y-5 mb-6">
+          {fields.map(f => f.textarea
+            ? <GlassTextarea key={f.key} label={f.label} value={values[f.key] ?? ""} onChange={v => onChange(f.key, v)} rows={f.rows} placeholder={f.placeholder} />
+            : <GlassInput key={f.key} label={f.label} value={values[f.key] ?? ""} onChange={v => onChange(f.key, v)} type={f.type} placeholder={f.placeholder} />
+          )}
+        </div>
+        <SaveButton loading={saving} onClick={onSave} />
+      </Card>
+    </div>
+  );
+}
+
+// ─── Dashboard Section ────────────────────────────────────────────────────────
+function DashboardSection({ stats, onNavigate }: { stats: AdminStats | null; onNavigate: (s: string) => void }) {
+  const cards = [
+    { emoji: "👥", label: "Total Users",    value: stats?.totalUsers ?? "—",   color: "#3b82f6", section: "users" },
+    { emoji: "⭐", label: "Reviews",        value: stats?.totalReviews ?? "—",  color: "#f59e0b", section: "reviews" },
+    { emoji: "📦", label: "Plans",          value: stats?.totalPlans ?? "—",    color: "#8b5cf6", section: "plans" },
+    { emoji: "🌐", label: "Services",       value: stats?.totalServices ?? 6,   color: "#22c55e", section: "services" },
+    { emoji: "📚", label: "Docs",           value: stats?.totalDocs ?? "—",     color: "#06b6d4", section: "docs" },
+    { emoji: "📋", label: "Activity Logs",  value: stats?.totalLogs ?? "—",     color: "#6366f1", section: "logs" },
+  ];
+  return (
+    <div>
+      <SectionHeader title="Dashboard" subtitle="Overview of your BruteScale admin panel" />
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        {cards.map((c, i) => (
+          <motion.button key={i} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.07 }}
+            onClick={() => onNavigate(c.section)} className="text-left">
+            <Card className="hover:border-indigo-500/30 transition-colors cursor-pointer">
+              <div className="text-2xl mb-3">{c.emoji}</div>
+              <div className="text-2xl font-bold mb-1" style={{ color: c.color }}>{c.value}</div>
+              <div className="text-white/40 text-xs font-medium uppercase tracking-wide">{c.label}</div>
+            </Card>
+          </motion.button>
+        ))}
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <Card>
+          <div className="flex items-center gap-3 mb-4">
+            <Shield size={18} className="text-emerald-400" />
+            <span className="text-white font-semibold">System Status</span>
+          </div>
+          <div className="space-y-3">
+            {[
+              { label: "API Server",      status: "Operational", color: "#22c55e" },
+              { label: "Database",        status: "Operational", color: "#22c55e" },
+              { label: "Authentication",  status: "Operational", color: "#22c55e" },
+              { label: "Media Uploads",   status: "Operational", color: "#22c55e" },
+            ].map(s => (
+              <div key={s.label} className="flex items-center justify-between py-2 border-b border-white/5 last:border-0">
+                <span className="text-white/60 text-sm">{s.label}</span>
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full" style={{ color: s.color, background: `${s.color}18`, border: `1px solid ${s.color}30` }}>{s.status}</span>
+              </div>
+            ))}
+          </div>
+        </Card>
+        <Card>
+          <div className="flex items-center gap-3 mb-4">
+            <Zap size={18} className="text-yellow-400" />
+            <span className="text-white font-semibold">Quick Actions</span>
+          </div>
+          <div className="space-y-2">
+            {[
+              { label: "Add Review",      section: "reviews",  color: "#f59e0b" },
+              { label: "Create Plan",     section: "plans",    color: "#8b5cf6" },
+              { label: "Upload Media",    section: "media",    color: "#3b82f6" },
+              { label: "New Doc",         section: "docs",     color: "#06b6d4" },
+            ].map(a => (
+              <button key={a.section} onClick={() => onNavigate(a.section)}
+                className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm text-left transition-all hover:bg-white/5"
+                style={{ border: "1px solid rgba(255,255,255,0.06)" }}>
+                <span className="text-white/70">{a.label}</span>
+                <ChevronRight size={14} style={{ color: a.color }} />
+              </button>
+            ))}
+          </div>
+        </Card>
+      </div>
+    </div>
+  );
+}
+
 // ─── Main Admin Page ───────────────────────────────────────────────────────────
 export default function Admin() {
   const [, navigate] = useLocation();
@@ -393,13 +337,11 @@ export default function Admin() {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [toast, setToast] = useState<{ msg: string; type: "success" | "error" } | null>(null);
 
-  // ── Guard ──────────────────────────────────────────────────────────────────
   useEffect(() => {
     if (!user) { navigate("/login"); return; }
     if (!user.isAdmin) { navigate("/"); }
   }, [user, navigate]);
 
-  // ── Load data ──────────────────────────────────────────────────────────────
   useEffect(() => {
     if (!token || !user?.isAdmin) return;
     fetch("/api/admin/stats", { headers: { Authorization: `Bearer ${token}` } })
@@ -440,99 +382,96 @@ export default function Admin() {
 
   const handleLogout = () => { writeLog("Admin Logout"); logout(); navigate("/"); };
 
+  const navTo = (s: string) => { setSection(s); setMobileSidebarOpen(false); };
+
   if (!user?.isAdmin) return null;
 
-  // ── Section config ─────────────────────────────────────────────────────────
-  const discordFields = [
-    { key: "discord_invite", label: "Discord Invite Link", placeholder: "https://discord.gg/..." },
-    { key: "discord_button_text", label: "Discord Button Text", placeholder: "Join Discord" },
-    { key: "discord_ticket_link", label: "Purchase Ticket Link", placeholder: "https://discord.gg/..." },
-    { key: "discord_server_name", label: "Support Server Name", placeholder: "BruteScale" },
-  ];
+  // ── Field configs ──────────────────────────────────────────────────────────
   const homepageFields = [
-    { key: "hero_title", label: "Hero Title", placeholder: "Power Without Limits" },
-    { key: "hero_subtitle", label: "Hero Subtitle", textarea: true, rows: 2, placeholder: "Military-grade hosting..." },
-    { key: "announcement_badge", label: "Announcement Badge Text", placeholder: "New Enterprise Hardware Deployed" },
-    { key: "start_hosting_btn", label: "Start Hosting Button Text", placeholder: "Start Hosting" },
-    { key: "view_plans_btn", label: "View Plans Button Text", placeholder: "View Plans" },
-    { key: "stat_uptime", label: "Uptime SLA Value", placeholder: "99.9%" },
-    { key: "stat_ddos", label: "DDoS Protection Value", placeholder: "480Gbps" },
-    { key: "stat_support", label: "Support Hours", placeholder: "24/7" },
-  ];
-  const networkFields = [
-    { key: "dc_india_status", label: "India Status", placeholder: "Online" },
-    { key: "dc_india_uptime", label: "India Uptime", placeholder: "99.99%" },
-    { key: "dc_india_latency", label: "India Latency", placeholder: "<12ms" },
-    { key: "dc_singapore_status", label: "Singapore Status", placeholder: "Online" },
-    { key: "dc_singapore_uptime", label: "Singapore Uptime", placeholder: "99.99%" },
-    { key: "dc_singapore_latency", label: "Singapore Latency", placeholder: "<8ms" },
-    { key: "dc_dubai_status", label: "Dubai Status", placeholder: "Online" },
-    { key: "dc_dubai_uptime", label: "Dubai Uptime", placeholder: "99.99%" },
-    { key: "dc_dubai_latency", label: "Dubai Latency", placeholder: "<18ms" },
-  ];
-  const docsFields = [
-    { key: "docs_hero_title", label: "Docs Hero Title", placeholder: "BruteScale Documentation" },
-    { key: "docs_hero_subtitle", label: "Docs Hero Subtitle", textarea: true, rows: 2, placeholder: "Everything you need to know..." },
-    { key: "docs_getting_started", label: "Getting Started Content", textarea: true, rows: 4, placeholder: "Welcome to BruteScale..." },
-    { key: "docs_billing_content", label: "Billing Content", textarea: true, rows: 3, placeholder: "We accept UPI, Bank Transfer..." },
-    { key: "docs_faq_1_q", label: "FAQ 1 Question", placeholder: "How long does deployment take?" },
-    { key: "docs_faq_1_a", label: "FAQ 1 Answer", textarea: true, rows: 2, placeholder: "..." },
-  ];
-  const appearanceFields = [
-    { key: "app_primary_color", label: "Primary Color (hex)", placeholder: "#3b82f6" },
-    { key: "app_secondary_color", label: "Secondary Color (hex)", placeholder: "#8b5cf6" },
-    { key: "app_footer_text", label: "Footer Text", placeholder: "BruteScale — Premium Hosting" },
-    { key: "app_copyright", label: "Copyright Text", placeholder: "© 2025 BruteScale" },
-    { key: "app_logo_text", label: "Logo Text", placeholder: "BruteScale" },
-    { key: "app_glow_strength", label: "Glow Strength (0–1)", placeholder: "0.5" },
-  ];
-  const seoFields = [
-    { key: "seo_title", label: "Website Title", placeholder: "BruteScale — Premium Hosting" },
-    { key: "seo_description", label: "Meta Description", textarea: true, rows: 2, placeholder: "Military-grade hosting..." },
-    { key: "seo_keywords", label: "Keywords", placeholder: "minecraft hosting, vps, rdp, dedicated servers" },
-    { key: "seo_og_image", label: "Open Graph Image URL", placeholder: "https://..." },
-    { key: "seo_twitter_card", label: "Twitter Card Type", placeholder: "summary_large_image" },
-    { key: "seo_google_verify", label: "Google Verification Code", placeholder: "google-site-verification=..." },
+    { key: "hero_title",       label: "Hero Title",            placeholder: "Power Without Limits" },
+    { key: "hero_subtitle",    label: "Hero Subtitle",         textarea: true, rows: 2, placeholder: "Military-grade hosting..." },
+    { key: "announcement_badge", label: "Announcement Badge", placeholder: "New Enterprise Hardware Deployed" },
+    { key: "start_hosting_btn", label: "Start Hosting Button", placeholder: "Start Hosting" },
+    { key: "view_plans_btn",   label: "View Plans Button",     placeholder: "View Plans" },
+    { key: "stat_uptime",      label: "Uptime SLA",            placeholder: "99.9%" },
+    { key: "stat_ddos",        label: "DDoS Protection Value", placeholder: "480Gbps" },
+    { key: "stat_support",     label: "Support Hours",         placeholder: "24/7" },
   ];
 
-  // ── Render section content ─────────────────────────────────────────────────
+  const ddosFields = [
+    { key: "ddos_hero_title",    label: "DDoS Hero Title",    placeholder: "Unbreakable DDoS Shield" },
+    { key: "ddos_hero_subtitle", label: "DDoS Hero Subtitle", textarea: true, rows: 2, placeholder: "480Gbps+ of inline mitigation..." },
+    { key: "ddos_capacity",      label: "Capacity Value",     placeholder: "480Gbps+" },
+    { key: "ddos_mitigation",    label: "Mitigation Time",    placeholder: "<10s" },
+    { key: "ddos_uptime",        label: "Uptime Value",       placeholder: "99.99%" },
+    { key: "ddos_latency",       label: "Added Latency",      placeholder: "0ms" },
+    { key: "ddos_cta_title",     label: "CTA Title",          placeholder: "Ready for Unbreakable Hosting?" },
+    { key: "ddos_cta_subtitle",  label: "CTA Subtitle",       textarea: true, rows: 2, placeholder: "Join thousands of..." },
+  ];
+
+  const networkFields = [
+    { key: "dc_india_status",      label: "India Status",     placeholder: "Online" },
+    { key: "dc_india_uptime",      label: "India Uptime",     placeholder: "99.99%" },
+    { key: "dc_india_latency",     label: "India Latency",    placeholder: "<12ms" },
+    { key: "dc_singapore_status",  label: "Singapore Status", placeholder: "Online" },
+    { key: "dc_singapore_uptime",  label: "Singapore Uptime", placeholder: "99.99%" },
+    { key: "dc_singapore_latency", label: "Singapore Latency",placeholder: "<8ms" },
+    { key: "dc_dubai_status",      label: "Dubai Status",     placeholder: "Online" },
+    { key: "dc_dubai_uptime",      label: "Dubai Uptime",     placeholder: "99.99%" },
+    { key: "dc_dubai_latency",     label: "Dubai Latency",    placeholder: "<18ms" },
+  ];
+
+  const settingsFields = [
+    { key: "site_name",         label: "Website Name",         placeholder: "BruteScale" },
+    { key: "site_tagline",      label: "Tagline",              placeholder: "Premium Hosting" },
+    { key: "contact_email",     label: "Contact Email",        placeholder: "support@brutescale.com" },
+    { key: "discord_invite",    label: "Discord Invite Link",  placeholder: "https://discord.gg/..." },
+    { key: "discord_button_text", label: "Discord Button Text",placeholder: "Join Discord" },
+    { key: "app_footer_text",   label: "Footer Text",          placeholder: "BruteScale — Premium Hosting" },
+    { key: "app_copyright",     label: "Copyright Text",       placeholder: "© 2025 BruteScale" },
+    { key: "app_logo_text",     label: "Logo Text",            placeholder: "BruteScale" },
+    { key: "seo_title",         label: "SEO Title",            placeholder: "BruteScale — Premium Hosting" },
+    { key: "seo_description",   label: "Meta Description",     textarea: true, rows: 2, placeholder: "Military-grade hosting..." },
+    { key: "seo_keywords",      label: "Keywords",             placeholder: "minecraft hosting, vps, rdp" },
+    { key: "seo_og_image",      label: "OG Image URL",         placeholder: "https://..." },
+    { key: "maintenance_mode",  label: "Maintenance Mode (on/off)", placeholder: "off" },
+  ];
+
+  // ── Render ─────────────────────────────────────────────────────────────────
   const renderContent = () => {
+    if (!token) return null;
     switch (section) {
-      case "dashboard": return <DashboardSection stats={stats} />;
-      case "discord":
-        return <SettingsSection title="Discord Settings" subtitle="Manage Discord links and button text across the website"
-          fields={discordFields} values={settings} onChange={setSetting}
-          onSave={() => saveSettings(discordFields.map(f => f.key), "Discord Settings Updated")} saving={saving} />;
+      case "dashboard": return <DashboardSection stats={stats} onNavigate={navTo} />;
+      case "reviews":   return <ReviewsManager token={token} />;
+      case "plans":     return <PlansManager token={token} />;
+      case "services":  return <ServicesManager token={token} />;
+      case "docs":      return <DocsManager token={token} />;
+      case "media":     return <MediaManager token={token} />;
       case "homepage":
-        return <SettingsSection title="Homepage Content" subtitle="Edit hero section, stats, and call-to-action text"
+        return <SettingsSection title="Homepage Editor" subtitle="Edit hero title, subtitles, stats, and buttons"
           fields={homepageFields} values={settings} onChange={setSetting}
           onSave={() => saveSettings(homepageFields.map(f => f.key), "Homepage Settings Updated")} saving={saving} />;
+      case "ddos":
+        return <SettingsSection title="DDoS Page Editor" subtitle="Edit the DDoS protection page hero, stats, and CTA"
+          fields={ddosFields} values={settings} onChange={setSetting}
+          onSave={() => saveSettings(ddosFields.map(f => f.key), "DDoS Page Settings Updated")} saving={saving} />;
       case "network":
-        return <SettingsSection title="Network Locations" subtitle="Manage datacenter status and latency display"
+        return <SettingsSection title="Network Locations" subtitle="Manage datacenter status and latency"
           fields={networkFields} values={settings} onChange={setSetting}
           onSave={() => saveSettings(networkFields.map(f => f.key), "Network Settings Updated")} saving={saving} />;
-      case "docs":
-        return <SettingsSection title="Documentation Manager" subtitle="Edit docs page headings, content, and FAQs"
-          fields={docsFields} values={settings} onChange={setSetting}
-          onSave={() => saveSettings(docsFields.map(f => f.key), "Docs Settings Updated")} saving={saving} />;
-      case "appearance":
-        return <SettingsSection title="Appearance Settings" subtitle="Customize colors, logo, and footer"
-          fields={appearanceFields} values={settings} onChange={setSetting}
-          onSave={() => saveSettings(appearanceFields.map(f => f.key), "Appearance Settings Updated")} saving={saving} />;
-      case "seo":
-        return <SettingsSection title="SEO Settings" subtitle="Manage meta tags, open graph, and search engine settings"
-          fields={seoFields} values={settings} onChange={setSetting}
-          onSave={() => saveSettings(seoFields.map(f => f.key), "SEO Settings Updated")} saving={saving} />;
-      case "users": return token ? <UsersSection token={token} /> : null;
-      case "logs": return token ? <LogsSection token={token} /> : null;
-      default: return null;
+      case "users":    return <UsersSection token={token} />;
+      case "settings":
+        return <SettingsSection title="Site Settings" subtitle="Website name, SEO, Discord, footer, and contact settings"
+          fields={settingsFields} values={settings} onChange={setSetting}
+          onSave={() => saveSettings(settingsFields.map(f => f.key), "Site Settings Updated")} saving={saving} />;
+      case "logs":     return <LogsSection token={token} />;
+      default:         return null;
     }
   };
 
-  // ── Sidebar ────────────────────────────────────────────────────────────────
   const Sidebar = ({ mobile = false }: { mobile?: boolean }) => (
-    <div className={mobile ? "p-4" : "p-6 h-full flex flex-col"}>
-      <div className="flex items-center gap-2 mb-8">
+    <div className={`${mobile ? "p-4" : "p-5 h-full flex flex-col"} overflow-y-auto`}>
+      <div className="flex items-center gap-2 mb-6">
         <div className="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style={{ background: "linear-gradient(135deg,#2563eb,#7c3aed)" }}>
           <Shield size={14} className="text-white" />
         </div>
@@ -542,34 +481,41 @@ export default function Admin() {
         </div>
       </div>
 
-      <nav className="space-y-0.5 flex-1">
-        {NAV.map(item => {
-          const Icon = item.icon;
-          const active = section === item.id;
-          return (
-            <button key={item.id} onClick={() => { setSection(item.id); setMobileSidebarOpen(false); }}
-              className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-left transition-all duration-200"
-              style={{
-                background: active ? "linear-gradient(135deg,rgba(37,99,235,0.2),rgba(124,58,237,0.15))" : "transparent",
-                border: active ? "1px solid rgba(99,102,241,0.3)" : "1px solid transparent",
-                color: active ? "#a5b4fc" : "rgba(255,255,255,0.45)",
-                boxShadow: active ? "0 0 14px rgba(99,102,241,0.12)" : "none",
-              }}>
-              <Icon size={15} className="shrink-0" style={{ color: active ? "#818cf8" : "rgba(255,255,255,0.28)" }} />
-              {item.label}
-              {active && <ChevronRight size={12} className="ml-auto text-indigo-400/60" />}
-            </button>
-          );
-        })}
+      <nav className="flex-1 space-y-4">
+        {NAV_GROUPS.map(group => (
+          <div key={group.label}>
+            <div className="text-white/20 text-[10px] font-bold uppercase tracking-widest px-3 mb-1.5">{group.label}</div>
+            <div className="space-y-0.5">
+              {group.items.map(item => {
+                const Icon = item.icon;
+                const active = section === item.id;
+                return (
+                  <button key={item.id} onClick={() => navTo(item.id)}
+                    className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm font-medium text-left transition-all duration-200"
+                    style={{
+                      background: active ? "linear-gradient(135deg,rgba(37,99,235,0.2),rgba(124,58,237,0.15))" : "transparent",
+                      border: active ? "1px solid rgba(99,102,241,0.3)" : "1px solid transparent",
+                      color: active ? "#a5b4fc" : "rgba(255,255,255,0.45)",
+                      boxShadow: active ? "0 0 14px rgba(99,102,241,0.12)" : "none",
+                    }}>
+                    <Icon size={14} className="shrink-0" style={{ color: active ? "#818cf8" : "rgba(255,255,255,0.28)" }} />
+                    {item.label}
+                    {active && <ChevronRight size={12} className="ml-auto text-indigo-400/60" />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ))}
       </nav>
 
-      <div className="mt-6 pt-6 border-t border-white/8 space-y-1">
+      <div className="mt-6 pt-5 border-t border-white/8 space-y-1">
         <button onClick={() => navigate("/")}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-white/40 hover:text-white/70 hover:bg-white/5 transition-colors">
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-white/40 hover:text-white/70 hover:bg-white/5 transition-colors">
           <Home size={14} /> Back to Site
         </button>
         <button onClick={handleLogout}
-          className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm text-red-400/60 hover:text-red-400 hover:bg-red-500/8 transition-colors">
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-red-400/60 hover:text-red-400 hover:bg-red-500/8 transition-colors">
           <LogOut size={14} /> Sign Out
         </button>
       </div>
@@ -578,26 +524,25 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-background text-foreground flex overflow-hidden" data-testid="page-admin">
-      {/* Ambient glow */}
       <div className="fixed inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 40% at 20% 50%, rgba(37,99,235,0.06) 0%, transparent 70%)" }} />
 
       {toast && <AnimatePresence><Toast msg={toast.msg} type={toast.type} onClose={() => setToast(null)} /></AnimatePresence>}
 
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex flex-col w-60 shrink-0 relative z-10"
+      <aside className="hidden lg:flex flex-col w-56 shrink-0 relative z-10"
         style={{ background: "linear-gradient(180deg,rgba(6,10,28,0.95),rgba(4,7,20,0.98))", borderRight: "1px solid rgba(59,130,246,0.1)" }}>
         <Sidebar />
       </aside>
 
-      {/* Mobile sidebar overlay */}
+      {/* Mobile sidebar */}
       <AnimatePresence>
         {mobileSidebarOpen && (
           <>
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden"
               onClick={() => setMobileSidebarOpen(false)} />
-            <motion.aside initial={{ x: -260 }} animate={{ x: 0 }} exit={{ x: -260 }} transition={{ type: "spring", stiffness: 300, damping: 30 }}
-              className="fixed left-0 top-0 bottom-0 w-60 z-50 lg:hidden overflow-y-auto"
+            <motion.aside initial={{ x: -240 }} animate={{ x: 0 }} exit={{ x: -240 }} transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed left-0 top-0 bottom-0 w-56 z-50 lg:hidden overflow-y-auto"
               style={{ background: "linear-gradient(180deg,rgba(6,10,28,0.99),rgba(4,7,20,1))", borderRight: "1px solid rgba(59,130,246,0.15)" }}>
               <Sidebar mobile />
             </motion.aside>
@@ -607,15 +552,14 @@ export default function Admin() {
 
       {/* Main content */}
       <div className="flex-1 flex flex-col min-h-screen overflow-hidden">
-        {/* Top bar */}
         <header className="flex items-center justify-between px-6 py-4 relative z-10 shrink-0"
           style={{ background: "rgba(4,7,20,0.8)", borderBottom: "1px solid rgba(59,130,246,0.08)", backdropFilter: "blur(20px)" }}>
           <div className="flex items-center gap-3">
             <button onClick={() => setMobileSidebarOpen(true)} className="lg:hidden text-white/50 hover:text-white transition-colors p-1.5 rounded-lg hover:bg-white/5">
-              <Settings size={18} />
+              <Menu size={18} />
             </button>
             <div>
-              <div className="text-white font-semibold text-sm">{NAV.find(n => n.id === section)?.label ?? "Admin Panel"}</div>
+              <div className="text-white font-semibold text-sm">{ALL_NAV.find(n => n.id === section)?.label ?? "Admin Panel"}</div>
               <div className="text-white/25 text-xs hidden sm:block">BruteScale Admin · {user.email}</div>
             </div>
           </div>
@@ -629,10 +573,9 @@ export default function Admin() {
           </div>
         </header>
 
-        {/* Scrollable content */}
         <main className="flex-1 overflow-y-auto p-6 lg:p-8">
           <AnimatePresence mode="wait">
-            <motion.div key={section} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.25 }}>
+            <motion.div key={section} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }}>
               {renderContent()}
             </motion.div>
           </AnimatePresence>

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { db, usersTable, adminSettingsTable, activityLogsTable } from "../db.js";
+import { db, usersTable, adminSettingsTable, activityLogsTable, reviewsTable, plansTable, docsTable } from "../db.js";
 import { eq, desc } from "drizzle-orm";
 import { requireAdmin } from "../middleware/admin.js";
 
@@ -7,17 +7,25 @@ const router = Router();
 router.use(requireAdmin);
 
 // GET /api/admin/stats
-router.get("/stats", async (req, res) => {
+router.get("/stats", async (_req, res) => {
   try {
-    const users = await db.select({ id: usersTable.id }).from(usersTable);
-    const logs  = await db.select({ id: activityLogsTable.id }).from(activityLogsTable);
+    const [users, logs, reviews, plans, docs] = await Promise.all([
+      db.select({ id: usersTable.id }).from(usersTable),
+      db.select({ id: activityLogsTable.id }).from(activityLogsTable),
+      db.select({ id: reviewsTable.id }).from(reviewsTable),
+      db.select({ id: plansTable.id }).from(plansTable),
+      db.select({ id: docsTable.id }).from(docsTable),
+    ]);
     return res.json({
-      totalUsers:    users.length,
-      totalLogs:     logs.length,
-      totalServices: 6,
+      totalUsers:     users.length,
+      totalLogs:      logs.length,
+      totalReviews:   reviews.length,
+      totalPlans:     plans.length,
+      totalDocs:      docs.length,
+      totalServices:  6,
       totalLocations: 3,
-      websiteStatus: "Online",
-      discordStatus: "Active",
+      websiteStatus:  "Online",
+      discordStatus:  "Active",
     });
   } catch (err) {
     console.error("admin stats error:", err);
@@ -26,7 +34,7 @@ router.get("/stats", async (req, res) => {
 });
 
 // GET /api/admin/settings
-router.get("/settings", async (req, res) => {
+router.get("/settings", async (_req, res) => {
   try {
     const rows = await db.select().from(adminSettingsTable);
     const settings = {};
@@ -74,7 +82,7 @@ router.post("/settings/bulk", async (req, res) => {
 });
 
 // GET /api/admin/users
-router.get("/users", async (req, res) => {
+router.get("/users", async (_req, res) => {
   try {
     const users = await db
       .select({ id: usersTable.id, username: usersTable.username, email: usersTable.email, createdAt: usersTable.createdAt })
@@ -101,7 +109,7 @@ router.delete("/users/:id", async (req, res) => {
 });
 
 // GET /api/admin/logs
-router.get("/logs", async (req, res) => {
+router.get("/logs", async (_req, res) => {
   try {
     const logs = await db
       .select()
@@ -133,7 +141,7 @@ router.post("/logs", async (req, res) => {
 });
 
 // DELETE /api/admin/logs
-router.delete("/logs", async (req, res) => {
+router.delete("/logs", async (_req, res) => {
   try {
     await db.delete(activityLogsTable);
     return res.json({ ok: true });

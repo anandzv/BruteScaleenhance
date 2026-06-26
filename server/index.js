@@ -8,17 +8,22 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import { db, adminSettingsTable } from "./db.js";
-import authRouter    from "./routes/auth.js";
-import adminRouter   from "./routes/admin.js";
-import reviewsRouter from "./routes/reviews.js";
+import authRouter        from "./routes/auth.js";
+import adminRouter       from "./routes/admin.js";
+import reviewsRouter     from "./routes/reviews.js";
+import plansRouter       from "./routes/plans.js";
+import servicesRouter    from "./routes/services_config.js";
+import docsRouter        from "./routes/docs_admin.js";
+import mediaRouter       from "./routes/media.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT   = parseInt(process.env.PORT || "3000", 10);
 const isProd = process.env.NODE_ENV === "production";
 
-// dist is always next to package.json, not next to server/
-const distDir     = path.resolve(__dirname, "../dist");
-const indexHtml   = path.join(distDir, "index.html");
+const distDir   = path.resolve(__dirname, "../dist");
+const indexHtml = path.join(distDir, "index.html");
+const uploadsDir = path.resolve(__dirname, "../data/uploads");
+if (!fs.existsSync(uploadsDir)) fs.mkdirSync(uploadsDir, { recursive: true });
 
 const app = express();
 
@@ -30,7 +35,7 @@ app.use(helmet({
       scriptSrc:   ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
       styleSrc:    ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc:     ["'self'", "https://fonts.gstatic.com"],
-      imgSrc:      ["'self'", "data:", "blob:", "https:"],
+      imgSrc:      ["'self'", "data:", "blob:", "https:", "http:"],
       connectSrc:  ["'self'"],
       workerSrc:   ["'self'", "blob:"],
       objectSrc:   ["'none'"],
@@ -41,14 +46,21 @@ app.use(helmet({
 }));
 app.use(compression());
 app.use(cors({ origin: "*" }));
-app.use(express.json({ limit: "2mb" }));
+app.use(express.json({ limit: "4mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan(isProd ? "combined" : "dev"));
 
+// ─── Uploaded media (served statically) ─────────────────────────────────────
+app.use("/uploads", express.static(uploadsDir, { maxAge: isProd ? "7d" : 0 }));
+
 // ─── API Routes ──────────────────────────────────────────────────────────────
-app.use("/api/auth",    authRouter);
-app.use("/api/admin",   adminRouter);
-app.use("/api/reviews", reviewsRouter);
+app.use("/api/auth",            authRouter);
+app.use("/api/admin",           adminRouter);
+app.use("/api/reviews",         reviewsRouter);
+app.use("/api/plans",           plansRouter);
+app.use("/api/services-config", servicesRouter);
+app.use("/api/docs",            docsRouter);
+app.use("/api/media",           mediaRouter);
 
 app.get("/api/healthz", (_req, res) => res.json({ status: "ok", timestamp: new Date().toISOString() }));
 
@@ -69,7 +81,7 @@ if (fs.existsSync(distDir)) {
   app.use(express.static(distDir, {
     maxAge: isProd ? "7d" : 0,
     etag: true,
-    index: false, // disable auto-index so we control it
+    index: false,
     setHeaders(res, filePath) {
       if (filePath.endsWith(".html")) {
         res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -77,7 +89,6 @@ if (fs.existsSync(distDir)) {
     },
   }));
 
-  // SPA fallback — all non-API routes serve index.html for React Router
   app.get("*", (req, res) => {
     if (req.path.startsWith("/api/")) {
       return res.status(404).json({ error: "API route not found." });
@@ -89,10 +100,8 @@ if (fs.existsSync(distDir)) {
   });
 } else {
   app.get("*", (_req, res) => {
-    res.status(503).send(`
-      <h2>Frontend not built</h2>
-      <p>Run <code>npm run build</code> then restart the server.</p>
-    `);
+    if (_req.path.startsWith("/api/")) return res.status(404).json({ error: "Not found." });
+    res.status(503).send(`<h2>Frontend not built</h2><p>Run <code>npm run build</code></p>`);
   });
 }
 

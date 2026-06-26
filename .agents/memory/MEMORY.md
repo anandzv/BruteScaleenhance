@@ -1,0 +1,2 @@
+- [Admin panel architecture](admin-panel.md) — full CMS admin at /admin with JWT auth; all sections are split into component files in src/components/admin/
+- [DB schema additions](db-schema.md) — plans, services_config, docs, media tables added to SQLite; rating column in reviews added via ALTER TABLE (not in CREATE TABLE IF NOT EXISTS)

@@ -1,0 +1,506 @@
+Build a complete production-ready Admin Panel for the BruteScale website.
+
+IMPORTANT
+
+* Do NOT redesign the website.
+* Keep the existing BruteScale UI.
+* Keep all existing pages working.
+* Do NOT remove any current functionality.
+* Create a secure admin system.
+
+## Authentication
+
+Admin Email:
+[ipc23771@gmail.com](mailto:ipc23771@gmail.com)
+
+Do NOT hardcode the password in source code.
+
+On first setup:
+
+* If no admin account exists, automatically create one using the above email.
+* Require a secure password to be created during first login OR load it from environment variables.
+* Use bcrypt password hashing.
+* Use JWT authentication.
+* Protect every admin route.
+* Redirect unauthenticated users to /admin/login.
+* Add logout functionality.
+
+---
+
+# Admin Dashboard
+
+Create:
+
+/admin
+
+Sidebar:
+
+Dashboard
+
+Reviews
+
+Services
+
+Plans
+
+Pages
+
+Docs
+
+Users
+
+Settings
+
+Media
+
+Analytics
+
+Profile
+
+Logout
+
+Dashboard cards:
+
+Total Users
+
+Total Reviews
+
+Total Services
+
+Total Plans
+
+Total Orders
+
+Total Docs
+
+Recent Activity
+
+Latest Uploaded Reviews
+
+Quick Actions
+
+---
+
+# Reviews Manager
+
+Create a complete review management system.
+
+Categories:
+
+YouTube Reviews
+
+Instagram Reviews
+
+Discord Reviews
+
+Functions:
+
+Add Review
+
+Edit Review
+
+Delete Review
+
+Hide / Show
+
+Search
+
+Filter
+
+Pagination
+
+Sort
+
+---
+
+## YouTube Reviews
+
+Fields:
+
+Video URL
+
+Video ID (auto detect)
+
+Title
+
+Creator Name
+
+Thumbnail (auto fetch if possible)
+
+Description
+
+Display Order
+
+Published
+
+Save
+
+Display automatically on Reviews page.
+
+---
+
+## Instagram Reviews
+
+Fields:
+
+Reel URL
+
+Thumbnail
+
+Creator
+
+Caption
+
+Published
+
+Display Order
+
+Save
+
+Display automatically on Reviews page.
+
+---
+
+## Discord Reviews
+
+Fields:
+
+Upload Screenshot
+
+Reviewer Name
+
+Review Text
+
+Rating
+
+Published
+
+Display Order
+
+Save
+
+Display automatically on Reviews page.
+
+Display automatically.
+
+---
+
+# Plans Manager
+
+Admin should be able to:
+
+Create Plan
+
+Edit Plan
+
+Delete Plan
+
+Duplicate Plan
+
+Hide Plan
+
+Show Plan
+
+Reorder Plans
+
+Each plan contains:
+
+Title
+
+Price
+
+Currency
+
+Billing Period
+
+CPU
+
+RAM
+
+Storage
+
+Bandwidth
+
+Location
+
+Button Text
+
+Button URL
+
+Features List
+
+Badge
+
+Popular Toggle
+
+Background Color
+
+Status
+
+Changes should update the Services page instantly.
+
+---
+
+# Services Manager
+
+Manage:
+
+Minecraft Hosting
+
+VPS
+
+RDP
+
+Dedicated Servers
+
+Discord Bot Hosting
+
+Web Hosting
+
+Functions:
+
+Add
+
+Edit
+
+Delete
+
+Hide
+
+Show
+
+Change icon
+
+Change image
+
+Description
+
+Features
+
+Pricing Link
+
+Order Button
+
+---
+
+# Homepage Editor
+
+Editable:
+
+Hero Title
+
+Hero Subtitle
+
+Buttons
+
+Statistics
+
+Cards
+
+Announcement Banner
+
+Partner Logos
+
+Animations Toggle
+
+---
+
+# DDoS Page Editor
+
+Editable:
+
+Hero
+
+Protection Stats
+
+480Gbps Value
+
+Cards
+
+Traffic Diagram Content
+
+FAQ
+
+CTA
+
+---
+
+# Docs Manager
+
+Create documentation.
+
+Rich text editor.
+
+Categories.
+
+Search.
+
+Delete.
+
+Publish.
+
+---
+
+# Media Manager
+
+Upload:
+
+Images
+
+Videos
+
+Icons
+
+Logos
+
+Screenshots
+
+Automatically organize files.
+
+---
+
+# User Manager
+
+View users.
+
+Search users.
+
+Delete users.
+
+Suspend users.
+
+Change roles.
+
+---
+
+# Settings
+
+Website Name
+
+Logo
+
+Favicon
+
+Discord Invite
+
+Footer
+
+SEO
+
+Social Links
+
+Analytics Code
+
+SMTP
+
+Contact Email
+
+Maintenance Mode
+
+---
+
+# Analytics
+
+Visitors
+
+Popular Pages
+
+Review Views
+
+Plan Clicks
+
+Orders
+
+Charts
+
+---
+
+# Database
+
+Store everything in database.
+
+No hardcoded data.
+
+---
+
+# API
+
+Create secure REST APIs for every admin function.
+
+Validate input.
+
+Return proper status codes.
+
+---
+
+# Security
+
+Use bcrypt.
+
+JWT authentication.
+
+Role-based authorization.
+
+Rate limiting.
+
+Helmet.
+
+Input validation.
+
+Prevent XSS.
+
+Prevent SQL Injection.
+
+Prevent CSRF where applicable.
+
+Secure cookies where appropriate.
+
+---
+
+# Responsive
+
+Desktop
+
+Tablet
+
+Mobile
+
+---
+
+# Final Verification
+
+Verify before finishing:
+
+✓ Admin login works
+
+✓ Dashboard works
+
+✓ Review upload works
+
+✓ YouTube reviews appear automatically
+
+✓ Instagram reviews appear automatically
+
+✓ Discord reviews appear automatically
+
+✓ Plan editor updates Services page
+
+✓ Homepage editor updates Home page
+
+✓ DDoS editor updates DDoS page
+
+✓ Docs editor works
+
+✓ Media uploads work
+
+✓ No TypeScript errors
+
+✓ No routing errors
+
+✓ No console errors
+
+✓ No blank pages
+
+✓ No white screen
+
+Do not stop until every feature has been implemented and tested successfully.
