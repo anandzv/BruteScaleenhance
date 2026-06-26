@@ -35,6 +35,23 @@ sqlite.exec(`
     admin_email TEXT NOT NULL,
     created_at  TEXT NOT NULL DEFAULT (datetime('now'))
   );
+  CREATE TABLE IF NOT EXISTS reviews (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    type           TEXT NOT NULL CHECK(type IN ('youtube','instagram','discord')),
+    visible        INTEGER NOT NULL DEFAULT 1,
+    sort_order     INTEGER NOT NULL DEFAULT 0,
+    thumbnail_url  TEXT,
+    title          TEXT,
+    creator        TEXT,
+    upload_date    TEXT,
+    video_url      TEXT,
+    caption        TEXT,
+    reel_url       TEXT,
+    screenshot_url TEXT,
+    reviewer       TEXT,
+    message        TEXT,
+    created_at     TEXT NOT NULL DEFAULT (datetime('now'))
+  );
 `);
 
 export const usersTable = sqliteTable("users", {
@@ -58,6 +75,24 @@ export const activityLogsTable = sqliteTable("activity_logs", {
   details:    text("details"),
   adminEmail: text("admin_email").notNull(),
   createdAt:  text("created_at").notNull().$defaultFn(() => new Date().toISOString()),
+});
+
+export const reviewsTable = sqliteTable("reviews", {
+  id:            integer("id").primaryKey({ autoIncrement: true }),
+  type:          text("type").notNull(),
+  visible:       integer("visible").notNull().default(1),
+  sortOrder:     integer("sort_order").notNull().default(0),
+  thumbnailUrl:  text("thumbnail_url"),
+  title:         text("title"),
+  creator:       text("creator"),
+  uploadDate:    text("upload_date"),
+  videoUrl:      text("video_url"),
+  caption:       text("caption"),
+  reelUrl:       text("reel_url"),
+  screenshotUrl: text("screenshot_url"),
+  reviewer:      text("reviewer"),
+  message:       text("message"),
+  createdAt:     text("created_at").notNull().$defaultFn(() => new Date().toISOString()),
 });
 
 export const db = drizzle(sqlite);

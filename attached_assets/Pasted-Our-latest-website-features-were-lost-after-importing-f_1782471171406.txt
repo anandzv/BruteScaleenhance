@@ -1,0 +1,288 @@
+Our latest website features were lost after importing from GitHub. They cannot be recovered, so I want you to rebuild ONLY the missing features while keeping the existing design, layout, colors, animations, typography, and code style exactly the same.
+
+IMPORTANT RULES
+
+- Do NOT redesign the website.
+- Do NOT change the homepage design.
+- Do NOT change colors or spacing.
+- Do NOT change existing animations.
+- Do NOT remove existing functionality.
+- Only add back the missing features and fix bugs.
+
+====================================
+PART 1 - FIX ALL NAVIGATION BUGS
+====================================
+
+Fix every navigation issue.
+
+1. Every navbar link must always open from the TOP of the destination page.
+
+Home
+Services
+Docs
+Minecraft Hosting
+VPS/RDP
+Network
+About
+DDoS
+Reviews
+
+No page should preserve the previous scroll position.
+
+When changing routes, automatically scroll to:
+
+window.scrollTo(0,0)
+
+or an equivalent React Router solution.
+
+====================================
+PART 2 - VIEW PLANS BUTTON
+====================================
+
+The "View Plans" button on the homepage currently does nothing.
+
+Make it open the Services page.
+
+When opening Services:
+
+- start from top
+- smooth transition
+- no middle scroll position
+
+====================================
+PART 3 - START HOSTING BUTTON
+====================================
+
+Verify the Start Hosting button.
+
+If broken, connect it to the intended hosting/services section.
+
+====================================
+PART 4 - ADD DDOS PAGE
+====================================
+
+Create a dedicated DDoS page.
+
+Add a DDoS navbar button beside About.
+
+The page must contain the existing BruteScale dark futuristic design.
+
+Include:
+
+Hero section
+
+Enterprise DDoS Protection
+
+480Gbps+
+
+Clean Traffic diagram
+
+Traffic flow animation
+
+Protection cards
+
+Statistics
+
+Why choose BruteScale Protection
+
+FAQ
+
+Call to Action
+
+Everything must match the website style.
+
+====================================
+PART 5 - ADD REVIEWS PAGE
+====================================
+
+Create a Reviews page.
+
+Navbar:
+
+About
+DDoS
+Reviews
+
+Reviews page layout:
+
+Left sidebar with categories
+
+• YouTube Reviews
+• Instagram Reviews
+• Discord Reviews
+
+When clicking a category, show only that content.
+
+YouTube Reviews:
+
+Responsive grid
+
+3 cards per row
+
+Each card contains:
+
+Thumbnail
+
+Title
+
+Creator
+
+Upload Date
+
+Watch button
+
+Instagram Reviews:
+
+Responsive grid
+
+3 cards per row
+
+Each card contains:
+
+Thumbnail
+
+Creator
+
+Caption
+
+Open Reel button
+
+Discord Reviews:
+
+Responsive grid
+
+3 cards per row
+
+Each card contains:
+
+Screenshot
+
+Reviewer
+
+Message
+
+Date
+
+====================================
+PART 6 - ADMIN PANEL SUPPORT
+====================================
+
+Prepare the Reviews page to be dynamic.
+
+Do NOT hardcode reviews.
+
+Create backend/API/database support so later the Admin Panel can:
+
+Upload YouTube video
+
+Upload Instagram Reel
+
+Upload Discord screenshot
+
+Edit
+
+Delete
+
+Hide
+
+Show
+
+Sort
+
+Everything should automatically appear on the Reviews page.
+
+====================================
+PART 7 - FIX ROUTING
+====================================
+
+No page should open halfway down.
+
+Examples:
+
+If I am in the middle of Home page
+
+Click Services
+
+Services opens from top.
+
+If I am at bottom of Home
+
+Click Docs
+
+Docs opens from top.
+
+If I am at bottom of Home
+
+Click DDoS
+
+DDoS opens from top.
+
+Every route behaves correctly.
+
+====================================
+PART 8 - VERIFY EXISTING PAGES
+====================================
+
+Verify these pages still work correctly:
+
+Home
+
+Services
+
+Docs
+
+Minecraft Hosting
+
+VPS/RDP
+
+Network
+
+About
+
+No broken routes.
+
+No blank pages.
+
+No white screen.
+
+====================================
+PART 9 - MOBILE
+====================================
+
+Make every new page fully responsive.
+
+Desktop
+
+Tablet
+
+Mobile
+
+====================================
+PART 10 - FINAL CHECK
+====================================
+
+Before finishing, verify:
+
+✓ View Plans works
+
+✓ Navigation scroll bug fixed
+
+✓ DDoS page exists
+
+✓ Reviews page exists
+
+✓ Reviews categories work
+
+✓ Responsive layout
+
+✓ No console errors
+
+✓ No TypeScript errors
+
+✓ No routing errors
+
+✓ No blank page
+
+✓ No white screen
+
+Do not stop until every feature above is fully implemented and tested.

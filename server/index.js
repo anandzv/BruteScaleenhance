@@ -8,8 +8,9 @@ import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
 import { db, adminSettingsTable } from "./db.js";
-import authRouter  from "./routes/auth.js";
-import adminRouter from "./routes/admin.js";
+import authRouter    from "./routes/auth.js";
+import adminRouter   from "./routes/admin.js";
+import reviewsRouter from "./routes/reviews.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT   = parseInt(process.env.PORT || "3000", 10);
@@ -45,8 +46,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan(isProd ? "combined" : "dev"));
 
 // ─── API Routes ──────────────────────────────────────────────────────────────
-app.use("/api/auth",  authRouter);
-app.use("/api/admin", adminRouter);
+app.use("/api/auth",    authRouter);
+app.use("/api/admin",   adminRouter);
+app.use("/api/reviews", reviewsRouter);
 
 app.get("/api/healthz", (_req, res) => res.json({ status: "ok", timestamp: new Date().toISOString() }));
 

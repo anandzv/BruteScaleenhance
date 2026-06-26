@@ -13,12 +13,14 @@ function DiscordIcon({ className }: { className?: string }) {
 }
 
 const navLinks = [
-  { label: "Services",  href: "#services" },
-  { label: "Docs",      href: "/docs" },
+  { label: "Services",          href: "#services" },
+  { label: "Docs",              href: "/docs" },
   { label: "Minecraft Hosting", href: "/minecraft-hosting", highlight: true },
-  { label: "VPS / RDP", href: "/vps-hosting" },
-  { label: "Network",   href: "#network" },
-  { label: "About",     href: "#about" },
+  { label: "VPS / RDP",        href: "/vps-hosting" },
+  { label: "Network",           href: "#network" },
+  { label: "About",             href: "#about" },
+  { label: "DDoS",              href: "/ddos" },
+  { label: "Reviews",           href: "/reviews" },
 ];
 
 // Scroll to a section on the home page.

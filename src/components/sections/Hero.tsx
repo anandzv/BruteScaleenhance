@@ -105,7 +105,12 @@ export function Hero() {
             <MagneticButton primary onClick={handleStartHosting} data-testid="btn-hero-primary">
               Start Hosting
             </MagneticButton>
-            <MagneticButton primary={false} onClick={() => { document.getElementById("pricing")?.scrollIntoView({ behavior: "smooth" }) }} data-testid="btn-hero-secondary">
+            <MagneticButton primary={false} onClick={() => {
+              const el = document.getElementById("services");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+              }
+            }} data-testid="btn-hero-secondary">
               View Plans
             </MagneticButton>
           </motion.div>
