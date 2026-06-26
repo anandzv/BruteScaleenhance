@@ -9,18 +9,29 @@ npm install
 # 2. Build the frontend
 npm run build
 
-# 3. Create and fill your environment file
+# 3. Configure environment (optional — defaults work out of the box)
 cp .env.example .env
-# Edit .env with your PORT, JWT_SECRET, ADMIN_EMAIL, ADMIN_PASSWORD
+# Edit .env to change JWT_SECRET (recommended for production)
 
 # 4. Start the server
 npm start
 ```
 
-The server will automatically:
-- Create the SQLite database at `data/brutescale.db`
-- Create the uploads folder at `data/uploads/`
-- Seed the admin account from `ADMIN_EMAIL` / `ADMIN_PASSWORD`
+On first start the server prints:
+
+```
+✓ Admin account created: ipc23771@gmail.com (role=admin)
+```
+
+## Default Admin Credentials
+
+| Field | Value |
+|-------|-------|
+| Email | `ipc23771@gmail.com` |
+| Password | `ipc23771` |
+| Role | `admin` |
+
+The admin account is created automatically on first startup. If the account already exists with a different role it is promoted to `admin` automatically. No manual database edits are ever needed.
 
 ## Pterodactyl Egg
 
@@ -29,21 +40,23 @@ The server will automatically:
 | Docker Image | `ghcr.io/pterodactyl/yolks:nodejs_22` |
 | Startup Command | `npm start` |
 | Install Script | `npm install && npm run build` |
-| Node Version | 22 LTS |
 
-## Required Environment Variables
+## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `PORT` | Port to listen on (default: 3000) |
-| `NODE_ENV` | Set to `production` |
-| `JWT_SECRET` | Long random secret for signing JWTs |
-| `ADMIN_EMAIL` | Admin account email |
-| `ADMIN_PASSWORD` | Admin account password |
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | `3000` | Port to listen on |
+| `NODE_ENV` | `production` | Environment flag |
+| `JWT_SECRET` | dev fallback | **Change this in production** — signs all login tokens |
+| `ADMIN_EMAIL` | `ipc23771@gmail.com` | Admin account email (auto-created on first start) |
+| `ADMIN_PASSWORD` | `ipc23771` | Admin account password (only used when creating the account) |
 
 ## Admin Panel
 
-Visit `/admin` and log in with your `ADMIN_EMAIL` / `ADMIN_PASSWORD`.
+1. Start the server (admin account is created automatically)
+2. Log in at `/login` with `ipc23771@gmail.com` / `ipc23771`
+3. Click the user avatar → **Admin Dashboard**
+4. Or go directly to `/admin/dashboard`
 
 ## Project Structure
 
@@ -51,7 +64,7 @@ Visit `/admin` and log in with your `ADMIN_EMAIL` / `ADMIN_PASSWORD`.
 /
 ├── server/          Express API + DB logic
 ├── src/             React frontend source
-├── dist/            Pre-built frontend (or build with npm run build)
+├── dist/            Pre-built frontend (rebuilt by npm run build)
 ├── public/          Static assets
 ├── data/
 │   ├── brutescale.db   SQLite database (auto-created)
