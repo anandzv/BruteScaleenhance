@@ -1,0 +1,137 @@
+
+> brutescale@1.0.0 dev
+> concurrently "npm run dev:server" "npm run dev:client"
+
+[1G[0K[0m[0][0m 
+[0m[0][0m > brutescale@1.0.0 dev:server
+[0m[0][0m > node --watch server/index.js
+[0m[0][0m 
+[0m[1][0m 
+[0m[1][0m > brutescale@1.0.0 dev:client
+[0m[1][0m > vite
+[0m[1][0m 
+[0m[0][0m 
+[0m[0][0m   🚀 BruteScale is running
+[0m[0][0m   ➜  http://localhost:3000
+[0m[0][0m   ➜  API: http://localhost:3000/api/healthz
+[0m[0][0m 
+[0m[0][0m   ⚠️  No /dist folder found. Run: npm run build
+[0m[0][0m 
+[0m[1][0m 
+[0m[1][0m   [32m[1mVITE[22m v6.4.3[39m  [2mready in [0m[1m522[22m[2m[0m ms[22m
+[0m[1][0m 
+[0m[1][0m   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+[0m[1][0m   [32m➜[39m  [1mNetwork[22m: [36mhttp://172.24.0.2:[1m5000[22m/[39m
+[0m[1][0m [2m10:44:38 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:44:38 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:46 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:44:46 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:44:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:45:04 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:45:04 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:45:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:45:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:45:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:45:11 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:45:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:45:12 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/LICENSE.txt[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/secondary_skills/LICENSE.txt[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/testing/SKILL.md[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/testing/.fingerprint[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/testing/database-testing.md[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/testing/replit-auth.md[22m
+[0m[1][0m [2m10:47:40 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:47:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:47:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:48:03 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:48:03 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:48:16 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:48:16 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:48:45 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:48:45 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:49:14 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:49:14 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:49:45 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:49:45 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:50:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:50:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:50:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:50:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:50:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:50:10 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:52:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/LICENSE.txt[22m
+[0m[1][0m [2m10:52:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:52:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/secondary_skills/LICENSE.txt[22m
+[0m[1][0m [2m10:53:15 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:53:15 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:53:23 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:53:23 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:54:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:54:09 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:54:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mserver/db.js[22m
+[0m[1][0m [2m10:54:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m Restarting 'server/index.js'
+[0m[0][0m 
+[0m[0][0m SIGTERM — shutting down gracefully...
+[0m[0][0m Server closed.
+[0m[1][0m [2m10:54:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m 
+[0m[0][0m   🚀 BruteScale is running
+[0m[0][0m   ➜  http://localhost:3000
+[0m[0][0m   ➜  API: http://localhost:3000/api/healthz
+[0m[0][0m 
+[0m[0][0m   ⚠️  No /dist folder found. Run: npm run build
+[0m[0][0m 
+[0m[1][0m [2m10:54:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:57:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/index.css[22m
+[0m[1][0m [2m10:57:58 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:57:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:57:59 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:58:16 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/sections/Navbar.tsx, /src/index.css[22m
+[0m[1][0m [2m10:58:16 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:58:18 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/sections/Hero.tsx, /src/index.css[22m
+[0m[1][0m [2m10:58:18 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:58:19 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mserver/index.js[22m
+[0m[1][0m [2m10:58:19 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m Restarting 'server/index.js'
+[0m[0][0m 
+[0m[0][0m SIGTERM — shutting down gracefully...
+[0m[1][0m [2m10:58:19 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m Server closed.
+[0m[1][0m [2m10:58:20 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:58:20 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m 
+[0m[0][0m   🚀 BruteScale is running
+[0m[0][0m   ➜  http://localhost:3000
+[0m[0][0m   ➜  API: http://localhost:3000/api/healthz
+[0m[0][0m 
+[0m[0][0m   ⚠️  No /dist folder found. Run: npm run build
+[0m[0][0m 
+[0m[1][0m [2m10:58:20 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 2.044 ms - 108[0m
+[0m[1][0m [2m10:58:27 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:58:27 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mserver/index.js[22m
+[0m[1][0m [2m10:58:27 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.344 ms - 108[0m
+[0m[1][0m [2m10:58:28 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:58:29 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:58:29 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.247 ms - 108[0m
+[0m[1][0m [2m10:58:29 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.279 ms - 108[0m
+[0m[1][0m [2m10:58:30 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.309 ms - 108[0m
+[0m[1][0m [2m10:58:31 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.289 ms - 108[0m
+[0m[1][0m [2m10:58:32 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.199 ms - 108[0m
+[0m[1][0m [2m10:58:33 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.373 ms - 108[0m
+[0m[1][0m [2m10:58:34 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[0][0m [0mGET /api/reviews?type=youtube [31m503[0m 0.254 ms - 108[0m
+[0m[1][0m [2m10:58:34 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/AaM5bsQlhMF09tcAtxeiZ/start_application.shell.exec.0[22m
+[0m[1][0m [0mnpm run dev:client exited with code SIGHUP[0m
+[0m[0][0m [0mnpm run dev:server exited with code SIGHUP[0m
