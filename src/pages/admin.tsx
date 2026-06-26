@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { useLocation } from "wouter";
+import { useLocation, useParams } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   LayoutDashboard, Settings, Globe, Home, FileText, Palette,
@@ -329,8 +329,9 @@ function DashboardSection({ stats, onNavigate }: { stats: AdminStats | null; onN
 // ─── Main Admin Page ───────────────────────────────────────────────────────────
 export default function Admin() {
   const [, navigate] = useLocation();
+  const params = useParams<{ section?: string }>();
   const { user, token, logout } = useAuth();
-  const [section, setSection] = useState("dashboard");
+  const section = params.section || "dashboard";
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [settings, setSettings] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
@@ -339,8 +340,9 @@ export default function Admin() {
 
   useEffect(() => {
     if (!user) { navigate("/login"); return; }
-    if (!user.isAdmin) { navigate("/"); }
-  }, [user, navigate]);
+    if (!user.isAdmin) { navigate("/"); return; }
+    if (!params.section) { navigate("/admin/dashboard"); }
+  }, [user, navigate, params.section]);
 
   useEffect(() => {
     if (!token || !user?.isAdmin) return;
@@ -382,7 +384,7 @@ export default function Admin() {
 
   const handleLogout = () => { writeLog("Admin Logout"); logout(); navigate("/"); };
 
-  const navTo = (s: string) => { setSection(s); setMobileSidebarOpen(false); };
+  const navTo = (s: string) => { navigate("/admin/" + s); setMobileSidebarOpen(false); };
 
   if (!user?.isAdmin) return null;
 

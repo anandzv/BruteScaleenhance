@@ -40,6 +40,7 @@ function Router() {
         <Route path="/rdp-hosting" component={RdpHosting} />
         <Route path="/docs" component={Docs} />
         <Route path="/admin" component={Admin} />
+        <Route path="/admin/:section" component={Admin} />
         <Route path="/ddos" component={DDoSPage} />
         <Route path="/reviews" component={ReviewsPage} />
         <Route component={NotFound} />

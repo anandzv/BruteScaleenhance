@@ -210,16 +210,16 @@ export function Navbar() {
                       {user.isAdmin && (
                         <>
                           <button
-                            onClick={() => { setUserMenuOpen(false); navigate("/admin"); }}
+                            onClick={() => { setUserMenuOpen(false); navigate("/admin/dashboard"); }}
                             className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-indigo-400 hover:text-indigo-300 hover:bg-indigo-500/10 transition-colors font-medium"
                           >
-                            <span>⚙️</span> Dashboard
+                            <span>⚙️</span> Admin Panel
                           </button>
                           <button
-                            onClick={() => { setUserMenuOpen(false); navigate("/admin"); }}
+                            onClick={() => { setUserMenuOpen(false); navigate("/admin/reviews"); }}
                             className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-blue-400 hover:text-blue-300 hover:bg-blue-500/10 transition-colors"
                           >
-                            <span>🛡️</span> Visit Admin Panel
+                            <span>🛡️</span> Manage Reviews
                           </button>
                           <div className="my-1.5 border-t border-white/5" />
                         </>

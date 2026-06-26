@@ -1,4 +1,5 @@
-import "dotenv/config";
+import dotenv from "dotenv";
+dotenv.config({ override: true });
 import express from "express";
 import cors from "cors";
 import compression from "compression";
@@ -7,7 +8,9 @@ import morgan from "morgan";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
-import { db, adminSettingsTable } from "./db.js";
+import bcrypt from "bcryptjs";
+import { db, adminSettingsTable, usersTable } from "./db.js";
+import { eq } from "drizzle-orm";
 import authRouter        from "./routes/auth.js";
 import adminRouter       from "./routes/admin.js";
 import reviewsRouter     from "./routes/reviews.js";
@@ -111,8 +114,31 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: "Internal server error." });
 });
 
+// ─── Seed default admin account ──────────────────────────────────────────────
+async function seedAdminUser() {
+  const adminEmail = (process.env.ADMIN_EMAIL || "").toLowerCase();
+  const adminPassword = process.env.ADMIN_PASSWORD || "ipc23771";
+  if (!adminEmail) return;
+  try {
+    const existing = await db.select({ id: usersTable.id }).from(usersTable).where(eq(usersTable.email, adminEmail)).limit(1);
+    if (existing.length === 0) {
+      const passwordHash = await bcrypt.hash(adminPassword, 12);
+      await db.insert(usersTable).values({
+        username: "admin",
+        email: adminEmail,
+        passwordHash,
+      });
+      console.log(`  ✅ Admin account created: ${adminEmail}`);
+    } else {
+      console.log(`  ✓  Admin account exists: ${adminEmail}`);
+    }
+  } catch (err) {
+    console.error("  ⚠️  Failed to seed admin account:", err?.message);
+  }
+}
+
 // ─── Start ───────────────────────────────────────────────────────────────────
-const server = app.listen(PORT, "0.0.0.0", () => {
+const server = app.listen(PORT, "0.0.0.0", async () => {
   console.log("");
   console.log(`  🚀 BruteScale is running`);
   console.log(`  ➜  http://localhost:${PORT}`);
@@ -121,6 +147,7 @@ const server = app.listen(PORT, "0.0.0.0", () => {
     console.log("");
     console.log("  ⚠️  No /dist folder found. Run: npm run build");
   }
+  await seedAdminUser();
   console.log("");
 });
 

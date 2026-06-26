@@ -23,10 +23,10 @@ export default function Login() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ identifier, password }),
       });
-      const data = await res.json() as { token?: string; user?: { id: number; username: string; email: string }; error?: string };
+      const data = await res.json() as { token?: string; user?: { id: number; username: string; email: string; isAdmin?: boolean }; error?: string };
       if (!res.ok) { setError(data.error ?? "Login failed."); return; }
       login(data.token!, data.user!);
-      navigate("/");
+      navigate(data.user?.isAdmin ? "/admin/dashboard" : "/");
     } catch {
       setError("Network error. Please try again.");
     } finally {

@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import { db, usersTable } from "../db.js";
 import { eq, or } from "drizzle-orm";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ override: true });
 
 const router = Router();
 const JWT_SECRET  = process.env.JWT_SECRET  || "brutescale-dev-secret-change-in-prod";
