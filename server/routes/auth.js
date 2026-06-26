@@ -9,11 +9,6 @@ dotenv.config({ override: true });
 const router = Router();
 const JWT_SECRET  = process.env.JWT_SECRET  || "brutescale-dev-secret-change-in-prod";
 const SALT_ROUNDS = 12;
-const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || "").toLowerCase();
-
-function isAdminEmail(email) {
-  return ADMIN_EMAIL !== "" && email.toLowerCase() === ADMIN_EMAIL;
-}
 
 // POST /api/auth/register
 router.post("/register", async (req, res) => {
@@ -43,12 +38,12 @@ router.post("/register", async (req, res) => {
     const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
     const [user] = await db
       .insert(usersTable)
-      .values({ username: username.trim(), email: email.toLowerCase(), passwordHash })
-      .returning({ id: usersTable.id, username: usersTable.username, email: usersTable.email });
+      .values({ username: username.trim(), email: email.toLowerCase(), passwordHash, role: "user" })
+      .returning({ id: usersTable.id, username: usersTable.username, email: usersTable.email, role: usersTable.role });
 
-    const admin = isAdminEmail(user.email);
-    const token = jwt.sign({ id: user.id, username: user.username, isAdmin: admin }, JWT_SECRET, { expiresIn: "30d" });
-    return res.status(201).json({ token, user: { ...user, isAdmin: admin } });
+    const isAdmin = user.role === "admin";
+    const token = jwt.sign({ id: user.id, username: user.username, isAdmin }, JWT_SECRET, { expiresIn: "30d" });
+    return res.status(201).json({ token, user: { id: user.id, username: user.username, email: user.email, isAdmin } });
   } catch (err) {
     console.error("register error:", err);
     return res.status(500).json({ error: "Internal server error." });
@@ -74,9 +69,9 @@ router.post("/login", async (req, res) => {
     const valid = await bcrypt.compare(password, user.passwordHash);
     if (!valid) return res.status(401).json({ error: "Invalid credentials." });
 
-    const admin = isAdminEmail(user.email);
-    const token = jwt.sign({ id: user.id, username: user.username, isAdmin: admin }, JWT_SECRET, { expiresIn: "30d" });
-    return res.json({ token, user: { id: user.id, username: user.username, email: user.email, isAdmin: admin } });
+    const isAdmin = user.role === "admin";
+    const token = jwt.sign({ id: user.id, username: user.username, isAdmin }, JWT_SECRET, { expiresIn: "30d" });
+    return res.json({ token, user: { id: user.id, username: user.username, email: user.email, isAdmin } });
   } catch (err) {
     console.error("login error:", err);
     return res.status(500).json({ error: "Internal server error." });
@@ -93,14 +88,14 @@ router.get("/me", async (req, res) => {
     const token = auth.slice(7);
     const payload = jwt.verify(token, JWT_SECRET);
     const [user] = await db
-      .select({ id: usersTable.id, username: usersTable.username, email: usersTable.email })
+      .select({ id: usersTable.id, username: usersTable.username, email: usersTable.email, role: usersTable.role })
       .from(usersTable)
       .where(eq(usersTable.id, payload.id))
       .limit(1);
 
     if (!user) return res.status(401).json({ error: "User not found." });
-    const admin = isAdminEmail(user.email);
-    return res.json({ user: { ...user, isAdmin: admin } });
+    const isAdmin = user.role === "admin";
+    return res.json({ user: { id: user.id, username: user.username, email: user.email, isAdmin } });
   } catch {
     return res.status(401).json({ error: "Invalid or expired token." });
   }

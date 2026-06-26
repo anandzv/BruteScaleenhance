@@ -114,27 +114,45 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: "Internal server error." });
 });
 
-// ─── Seed default admin account ──────────────────────────────────────────────
-async function seedAdminUser() {
-  const adminEmail = (process.env.ADMIN_EMAIL || "").toLowerCase();
-  const adminPassword = process.env.ADMIN_PASSWORD || "ipc23771";
-  if (!adminEmail) return;
+// ─── Seed / promote admin account ────────────────────────────────────────────
+// Runs on every startup.
+// - If the admin account does not exist → create it with role='admin'.
+// - If it already exists but has role='user' → promote it to role='admin'.
+// This is idempotent: running it multiple times has no side-effects.
+async function ensureAdminAccount() {
+  const adminEmail    = (process.env.ADMIN_EMAIL    || "ipc23771@gmail.com").toLowerCase();
+  const adminPassword = process.env.ADMIN_PASSWORD  || "ipc23771";
+
   try {
-    const existing = await db.select({ id: usersTable.id }).from(usersTable).where(eq(usersTable.email, adminEmail)).limit(1);
-    if (existing.length === 0) {
+    const [existing] = await db
+      .select({ id: usersTable.id, role: usersTable.role })
+      .from(usersTable)
+      .where(eq(usersTable.email, adminEmail))
+      .limit(1);
+
+    if (!existing) {
+      // Create brand-new admin account
       const passwordHash = await bcrypt.hash(adminPassword, 12);
       const username = adminEmail.split("@")[0].replace(/[^a-zA-Z0-9_]/g, "_").slice(0, 20) || "admin";
       await db.insert(usersTable).values({
         username,
         email: adminEmail,
         passwordHash,
+        role: "admin",
       });
-      console.log(`  ✅ Admin account created: ${adminEmail}`);
+      console.log(`  ✅ Admin account created: ${adminEmail} (role=admin)`);
+    } else if (existing.role !== "admin") {
+      // Upgrade existing account to admin
+      await db
+        .update(usersTable)
+        .set({ role: "admin" })
+        .where(eq(usersTable.email, adminEmail));
+      console.log(`  ✅ Admin account promoted: ${adminEmail} (role=admin)`);
     } else {
-      console.log(`  ✓  Admin account exists: ${adminEmail}`);
+      console.log(`  ✓  Admin account ready: ${adminEmail} (role=admin)`);
     }
   } catch (err) {
-    console.error("  ⚠️  Failed to seed admin account:", err?.message);
+    console.error("  ⚠️  Failed to ensure admin account:", err?.message);
   }
 }
 
@@ -148,7 +166,7 @@ const server = app.listen(PORT, "0.0.0.0", async () => {
     console.log("");
     console.log("  ⚠️  No /dist folder found. Run: npm run build");
   }
-  await seedAdminUser();
+  await ensureAdminAccount();
   console.log("");
 });
 

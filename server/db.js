@@ -19,6 +19,7 @@ sqlite.exec(`
     username      TEXT NOT NULL UNIQUE,
     email         TEXT NOT NULL UNIQUE,
     password_hash TEXT NOT NULL,
+    role          TEXT NOT NULL DEFAULT 'user',
     created_at    TEXT NOT NULL DEFAULT (datetime('now'))
   );
   CREATE TABLE IF NOT EXISTS admin_settings (
@@ -110,11 +111,21 @@ sqlite.exec(`
   );
 `);
 
+// ─── Migrations: add columns to existing DBs that predate them ────────────────
+const migrations = [
+  "ALTER TABLE users ADD COLUMN role TEXT NOT NULL DEFAULT 'user'",
+  "ALTER TABLE reviews ADD COLUMN rating INTEGER DEFAULT 5",
+];
+for (const sql of migrations) {
+  try { sqlite.exec(sql); } catch { /* column already exists — safe to ignore */ }
+}
+
 export const usersTable = sqliteTable("users", {
   id:           integer("id").primaryKey({ autoIncrement: true }),
   username:     text("username").notNull().unique(),
   email:        text("email").notNull().unique(),
   passwordHash: text("password_hash").notNull(),
+  role:         text("role").notNull().default("user"),
   createdAt:    text("created_at").notNull().$defaultFn(() => new Date().toISOString()),
 });
 
