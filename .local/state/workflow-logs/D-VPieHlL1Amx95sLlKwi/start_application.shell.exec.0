@@ -1,0 +1,497 @@
+
+> brutescale@1.0.0 dev
+> concurrently "npm run dev:server" "npm run dev:client"
+
+[1G[0K[0m[0][0m 
+[0m[0][0m > brutescale@1.0.0 dev:server
+[0m[0][0m > node --watch server/index.js
+[0m[0][0m 
+[0m[1][0m 
+[0m[1][0m > brutescale@1.0.0 dev:client
+[0m[1][0m > vite
+[0m[1][0m 
+[0m[0][0m 
+[0m[0][0m   🚀 BruteScale is running
+[0m[0][0m   ➜  http://localhost:3000
+[0m[0][0m   ➜  API: http://localhost:3000/api/healthz
+[0m[0][0m 
+[0m[0][0m   ⚠️  No /dist folder found. Run: npm run build
+[0m[0][0m 
+[0m[1][0m 
+[0m[1][0m   [32m[1mVITE[22m v6.4.3[39m  [2mready in [0m[1m541[22m[2m[0m ms[22m
+[0m[1][0m 
+[0m[1][0m   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+[0m[1][0m   [32m➜[39m  [1mNetwork[22m: [36mhttp://172.24.0.2:[1m5000[22m/[39m
+[0m[1][0m [2m10:43:39 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:43:39 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:44 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:43:44 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.replit[22m
+[0m[1][0m [2m10:43:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[1][0m [2m10:43:51 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest[22m
+[0m[1][0m [2m10:43:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest.json[22m
+[0m[1][0m [2m10:43:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:43:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:53 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/LICENSE.txt[22m
+[0m[1][0m [2m10:43:53 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:53 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/automation/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:53 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:53 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:53 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/.fingerprint[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/SKILL.md[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/bootstrap-legacy.js[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/bootstrap.js[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/references/multi-artifact-creation.md[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/data-visualization/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/OWNERS[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/package.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/automation/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/tsconfig.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/SKILL.md.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/components.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/index.html.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/package.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/tokens.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/design-system/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/tsconfig.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/vite.config.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/app.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/babel.config.js[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/metro.config.js[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/package.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/expo/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/tsconfig.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/components.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/index.html[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/mockupPreviewPlugin.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/package.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/mockup-sandbox/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/tsconfig.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/vite.config.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/components.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/index.html.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/package.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/react-vite/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/tsconfig.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/vite.config.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/index.html.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/package.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/slides/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/tsconfig.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/vite.config.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/index.html.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/package.json.template[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/artifacts/artifacts/video-js/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/tsconfig.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/vite.config.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/scripts/build.sh[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/scripts/inngest.sh[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/global.d.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/tests/testCronAutomation.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/tests/testWebhookAutomation.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/scripts/build-tokens.d.mts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/scripts/build-tokens.mjs[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/App.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/main.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/app/+not-found.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/app/_layout.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/components/ErrorBoundary.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/components/ErrorFallback.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/components/KeyboardAwareScrollViewCompat.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/constants/colors.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/hooks/useColors.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/scripts/build.js[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/server/serve.js[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/App.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/main.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/public/robots.txt[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/App.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/main.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/scripts/validate-slides.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/src/App.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/src/main.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/slides/files/src/slideLoader.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/scripts/validate-recording.sh[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/App.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/main.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/mastra/index.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/triggers/cronTriggers.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/triggers/exampleConnectorTrigger.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/triggers/slackTriggers.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/triggers/telegramTriggers.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/generated/tokens.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/hooks/use-mobile.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/hooks/use-toast.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/lib/utils.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/app/(tabs)/_layout.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/app/(tabs)/index.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/expo/files/server/templates/landing-page.html[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/.generated/mockup-components.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-mobile.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/hooks/use-toast.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/lib/utils.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-mobile.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/hooks/use-toast.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/lib/utils.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/pages/not-found.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/hooks/use-mobile.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/lib/utils.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/mastra/agents/agent.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/mastra/inngest/client.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/mastra/inngest/index.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/mastra/storage/index.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/mastra/tools/exampleTool.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/automation/files/src/mastra/workflows/workflow.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/accordion.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/alert-dialog.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/alert.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/aspect-ratio.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/avatar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/badge.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/breadcrumb.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/button-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/button.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/calendar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/card.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/carousel.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/chart.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/checkbox.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/collapsible.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/command.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/context-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/dialog.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/drawer.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/dropdown-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/empty.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/field.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/form.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/hover-card.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/input-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/input-otp.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/input.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/item.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/kbd.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/label.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/menubar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/navigation-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/radio-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/resizable.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/scroll-area.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/select.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/separator.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/sheet.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/sidebar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/skeleton.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/slider.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/sonner.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/spinner.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/switch.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/table.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/tabs.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/textarea.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/toast.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/toaster.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/toggle-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/toggle.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/tooltip.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/accordion.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/alert-dialog.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/alert.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/aspect-ratio.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/avatar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/badge.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/breadcrumb.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/button-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/button.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/calendar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/card.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/carousel.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/chart.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/checkbox.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/collapsible.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/pagination.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/command.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/context-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/dialog.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/drawer.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/dropdown-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/empty.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/field.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/form.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/hover-card.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/input-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/input-otp.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/input.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/item.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/popover.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/kbd.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/label.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/menubar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/navigation-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/pagination.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/popover.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/progress.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/radio-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/resizable.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/scroll-area.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/select.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/separator.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sheet.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sidebar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/skeleton.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/slider.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/sonner.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/spinner.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/switch.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/table.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/tabs.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/design-system/files/src/components/ui/progress.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/textarea.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/toast.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/toaster.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/toggle-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/toggle.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/mockup-sandbox/files/src/components/ui/tooltip.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/accordion.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/alert-dialog.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/alert.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/aspect-ratio.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/avatar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/badge.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/breadcrumb.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/button-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/button.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/calendar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/card.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/carousel.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/chart.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/checkbox.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/collapsible.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/command.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/context-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/dialog.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/drawer.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/dropdown-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/empty.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/field.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/form.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/hover-card.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/input-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/input-otp.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/input.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/item.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/kbd.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/label.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/menubar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/navigation-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/pagination.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/popover.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/progress.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/radio-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/resizable.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/scroll-area.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/select.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/separator.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sheet.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sidebar.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/skeleton.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/slider.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/sonner.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/spinner.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/switch.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/table.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/tabs.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/textarea.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/toast.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/toaster.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/toggle-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/toggle.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/react-vite/files/src/components/ui/tooltip.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/components/video/ReplitLoadingScene.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/components/video/VideoTemplate.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/components/video/index.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/lib/video/animations.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/lib/video/hooks.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/artifacts/artifacts/video-js/files/src/lib/video/index.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/secondary_skills/LICENSE.txt[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/automation/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m changed tsconfig file detected: /home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/automation/files/src/mastra/workflows/workflow.ts[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/artifact.yaml[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/components.json[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/src/index.css[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/src/components/ui/alert.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/src/components/ui/button-group.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/src/components/ui/context-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/src/components/ui/navigation-menu.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/src/components/ui/skeleton.tsx[22m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:54 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:43:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:55 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m       at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:37369:24)
+[0m[1][0m [2m10:43:55 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:55 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:43:55 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:43:55 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:43:55 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m       at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:37369:24)
+[0m[1][0m [2m10:44:01 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m [2m10:44:01 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:01 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:01 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:01 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:01 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m       at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:37369:24)
+[0m[1][0m [2m10:44:01 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:02 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m [2m10:44:02 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:02 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:02 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m [2m10:44:02 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:02 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:44:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:06 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:06 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m       at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:37369:24)
+[0m[1][0m [2m10:44:06 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:44:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:13 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:13 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:13 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m       at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:37369:24)
+[0m[1][0m [2m10:44:13 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:22 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/replit/agent/.latest.json[22m
+[0m[1][0m [2m10:44:22 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:22 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:22 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:22 AM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m [2m10:44:22 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[1][0m [2m10:44:23 AM[22m [31m[1m[vite][22m[39m [31mInternal server error: ENOENT: no such file or directory, open '/home/runner/workspace/.local/skills/.tmp-artifacts-keDcVx70OhlQ2UbwcBQ6Z/artifacts/design-system/files/public/favicon.svg'[39m
+[0m[1][0m   Plugin: [35mvite:css-analysis[39m
+[0m[1][0m   File: [36m/home/runner/workspace/src/index.css[39m
+[0m[1][0m       at async open (node:internal/fs/promises:634:25)
+[0m[1][0m       at async Object.readFile (node:internal/fs/promises:1236:14)
+[0m[1][0m       at async fileToDevUrl (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:10500:21)
+[0m[1][0m       at async TransformPluginContext.handler (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:43626:29)
+[0m[1][0m       at async EnvironmentPluginContainer.transform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:42453:18)
+[0m[1][0m       at async loadAndTransform (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:35845:27)
+[0m[1][0m       at async viteTransformMiddleware (file:///home/runner/workspace/node_modules/vite/dist/node/chunks/dep-Dm0c1Wj2.js:37369:24)
+[0m[1][0m [2m10:44:23 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.local/state/workflow-logs/D-VPieHlL1Amx95sLlKwi/start_application.shell.exec.0[22m
+[0m[0][0m [0mnpm run dev:server exited with code SIGHUP[0m
+[0m[1][0m [0mnpm run dev:client exited with code SIGHUP[0m

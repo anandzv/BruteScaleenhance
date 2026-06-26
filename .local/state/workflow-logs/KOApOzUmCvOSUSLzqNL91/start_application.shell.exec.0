@@ -1,0 +1,48 @@
+
+> brutescale@1.0.0 dev
+> concurrently "npm run dev:server" "npm run dev:client"
+
+[1G[0K[0m[0][0m 
+[0m[0][0m > brutescale@1.0.0 dev:server
+[0m[0][0m > node --watch server/index.js
+[0m[0][0m 
+[0m[1][0m 
+[0m[1][0m > brutescale@1.0.0 dev:client
+[0m[1][0m > vite
+[0m[1][0m 
+[0m[0][0m 
+[0m[0][0m   [env] No .env file found — using environment variables / defaults
+[0m[0][0m   🚀 BruteScale is running
+[0m[0][0m   ➜  http://localhost:3000
+[0m[0][0m   ➜  API: http://localhost:3000/api/healthz
+[0m[0][0m   ─── Admin account bootstrap ────────────────────────────
+[0m[0][0m   [env] ADMIN_EMAIL    = ipc23771@gmail.com
+[0m[0][0m   [env] ADMIN_PASSWORD = ******** (8 chars)
+[0m[0][0m   [db]  Admin found    = yes (id=2, role=admin)
+[0m[0][0m   [bcrypt] Generating password hash...
+[0m[0][0m   [bcrypt] Hash generated: $2b$12$4hziztzEvxvha...
+[0m[0][0m   [db]  Password reset = yes
+[0m[0][0m   [db]  Role enforced  = admin
+[0m[0][0m   [bcrypt] Login comparison = ✓ PASS
+[0m[0][0m   [jwt]  Token smoke test  = ✓ PASS
+[0m[0][0m   ─────────────────────────────────────────────────────────
+[0m[0][0m   Admin account ready:
+[0m[0][0m   Email:    ipc23771@gmail.com
+[0m[0][0m   Role:     admin
+[0m[0][0m   ─────────────────────────────────────────────────────────
+[0m[0][0m 
+[0m[1][0m 
+[0m[1][0m   [32m[1mVITE[22m v6.4.3[39m  [2mready in [0m[1m851[22m[2m[0m ms[22m
+[0m[1][0m 
+[0m[1][0m   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+[0m[1][0m   [32m➜[39m  [1mNetwork[22m: [36mhttp://172.24.0.2:[1m5000[22m/[39m
+[0m[0][0m [0mGET /api/auth/me [36m304[0m 3.448 ms - -[0m
+[0m[0][0m [0mPOST /api/auth/login [32m200[0m 281.866 ms - 281[0m
+[0m[0][0m [0mPOST /api/auth/login [32m200[0m 290.004 ms - 281[0m
+[0m[0][0m [0mGET /api/auth/me [32m200[0m 1.449 ms - 83[0m
+[0m[0][0m [0mGET /api/admin/stats [32m200[0m 2.133 ms - 163[0m
+[0m[0][0m [0mGET /admin [32m200[0m 4.325 ms - 1845[0m
+[0m[0][0m [0mGET /admin/dashboard [32m200[0m 1.722 ms - 1845[0m
+[0m[0][0m [0mGET /api/admin/stats [33m401[0m 0.321 ms - 25[0m
+[0m[0][0m [0mPOST /api/auth/login [33m401[0m 262.001 ms - 32[0m
+[0m[0][0m [0mPOST /api/auth/login [33m401[0m 263.768 ms - 32[0m

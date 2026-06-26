@@ -1,0 +1,67 @@
+
+> brutescale@1.0.0 dev
+> concurrently "npm run dev:server" "npm run dev:client"
+
+[1G[0K[0m[1][0m 
+[0m[1][0m > brutescale@1.0.0 dev:client
+[0m[1][0m > vite
+[0m[1][0m 
+[0m[0][0m 
+[0m[0][0m > brutescale@1.0.0 dev:server
+[0m[0][0m > node --watch server/index.js
+[0m[0][0m 
+[0m[1][0m 
+[0m[1][0m   [32m[1mVITE[22m v6.4.3[39m  [2mready in [0m[1m733[22m[2m[0m ms[22m
+[0m[1][0m 
+[0m[1][0m   [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5000[22m/[39m
+[0m[1][0m   [32m➜[39m  [1mNetwork[22m: [36mhttp://172.24.0.2:[1m5000[22m/[39m
+[0m[0][0m 
+[0m[0][0m   🚀 BruteScale is running
+[0m[0][0m   ➜  http://localhost:3000
+[0m[0][0m   ➜  API: http://localhost:3000/api/healthz
+[0m[0][0m 
+[0m[0][0m   ⚠️  No /dist folder found. Run: npm run build
+[0m[0][0m   ✅ Admin account created: admin@brutescale.com
+[0m[0][0m 
+[0m[0][0m [0mGET /api/reviews?type=youtube [32m200[0m 3.026 ms - 14[0m
+[0m[0][0m [0mGET /api/reviews?type=instagram [32m200[0m 2.464 ms - 14[0m
+[0m[0][0m [0mGET /api/reviews?type=discord [32m200[0m 1.380 ms - 14[0m
+[0m[0][0m [0mGET /api/reviews?type=instagram [36m304[0m 1.584 ms - -[0m
+[0m[0][0m [0mPOST /api/auth/login [33m401[0m 0.849 ms - 32[0m
+[0m[0][0m [0mPOST /api/auth/login [33m401[0m 0.884 ms - 32[0m
+[0m[0][0m [0mPOST /api/auth/login [33m401[0m 0.943 ms - 32[0m
+[0m[0][0m [0mPOST /api/auth/login [33m401[0m 2.040 ms - 32[0m
+[0m[0][0m [0mPOST /api/auth/register [32m201[0m 285.784 ms - 283[0m
+[0m[0][0m [0mGET /api/auth/me [32m200[0m 2.499 ms - 84[0m
+[0m[0][0m [0mPOST /api/auth/login [32m200[0m 264.965 ms - 283[0m
+[0m[1][0m [2m11:40:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.replit[22m
+[0m[1][0m [2m11:40:52 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[0][0m [0mGET /api/auth/me [36m304[0m 3.316 ms - -[0m
+[0m[1][0m [2m11:40:53 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.replit[22m
+[0m[1][0m [2m11:40:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/toolchain.json[22m
+[0m[0][0m [0mGET /api/auth/me [36m304[0m 1.081 ms - -[0m
+[0m[1][0m [2m11:40:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest.json[22m
+[0m[1][0m [2m11:40:54 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.cache/replit/env/latest[22m
+[0m[0][0m [0mGET /api/auth/me [36m304[0m 4.243 ms - -[0m
+[0m[1][0m [2m11:41:33 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2mserver/index.js[22m
+[0m[0][0m Restarting 'server/index.js'
+[0m[0][0m 
+[0m[0][0m SIGTERM — shutting down gracefully...
+[0m[0][0m Server closed.
+[0m[0][0m 
+[0m[0][0m   🚀 BruteScale is running
+[0m[0][0m   ➜  http://localhost:3000
+[0m[0][0m   ➜  API: http://localhost:3000/api/healthz
+[0m[0][0m 
+[0m[0][0m   ⚠️  No /dist folder found. Run: npm run build
+[0m[0][0m   ✓  Admin account exists: admin@brutescale.com
+[0m[0][0m 
+[0m[0][0m [0mGET /api/auth/me [36m304[0m 6.199 ms - -[0m
+[0m[1][0m [2m11:41:36 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/sections/Navbar.tsx, /src/index.css[22m
+[0m[0][0m [0mGET /api/auth/me [36m304[0m 1.324 ms - -[0m
+[0m[1][0m [2m11:41:46 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/admin.tsx, /src/index.css[22m
+[0m[0][0m [0mPOST /api/auth/login [32m200[0m 299.652 ms - 283[0m
+[0m[1][0m [2m11:42:15 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/admin.tsx, /src/index.css[22m
+[0m[1][0m [2m11:42:26 AM[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/admin.tsx, /src/index.css[22m
+[0m[0][0m [0mnpm run dev:server exited with code SIGHUP[0m
+[0m[1][0m [0mnpm run dev:client exited with code SIGHUP[0m
