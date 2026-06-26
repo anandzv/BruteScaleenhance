@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "pttbWObQCKxnIRBbCxTYl"
+uri = "file://brutescale-production.zip"
+type = "unspecified"
+title = "brutescale-production.zip — Pterodactyl Deployment Package"

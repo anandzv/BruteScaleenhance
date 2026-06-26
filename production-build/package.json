@@ -1,0 +1,26 @@
+{
+  "name": "brutescale",
+  "version": "1.0.0",
+  "description": "BruteScale — Premium hosting provider website with admin panel",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "echo 'Frontend already pre-built in dist/. Nothing to do.'"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.0",
+    "better-sqlite3": "^11.9.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.36.0",
+    "express": "^4.21.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.2.0"
+  }
+}
