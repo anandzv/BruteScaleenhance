@@ -213,7 +213,7 @@ export function Navbar() {
                             onClick={() => { setUserMenuOpen(false); navigate("/admin/dashboard"); }}
                             className="w-full flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-indigo-400 hover:text-indigo-300 hover:bg-indigo-500/10 transition-colors font-medium"
                           >
-                            <span>⚙️</span> Admin Panel
+                            <span>⚙️</span> Admin Dashboard
                           </button>
                           <button
                             onClick={() => { setUserMenuOpen(false); navigate("/admin/reviews"); }}

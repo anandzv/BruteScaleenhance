@@ -123,8 +123,9 @@ async function seedAdminUser() {
     const existing = await db.select({ id: usersTable.id }).from(usersTable).where(eq(usersTable.email, adminEmail)).limit(1);
     if (existing.length === 0) {
       const passwordHash = await bcrypt.hash(adminPassword, 12);
+      const username = adminEmail.split("@")[0].replace(/[^a-zA-Z0-9_]/g, "_").slice(0, 20) || "admin";
       await db.insert(usersTable).values({
-        username: "admin",
+        username,
         email: adminEmail,
         passwordHash,
       });

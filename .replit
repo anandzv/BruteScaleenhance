@@ -11,7 +11,7 @@ channel = "stable-25_05"
 [userenv.shared]
 PORT = "3000"
 NODE_ENV = "development"
-ADMIN_EMAIL = "admin@brutescale.com"
+ADMIN_EMAIL = "ipc23771@gmail.com"
 
 [workflows]
 runButton = "Project"

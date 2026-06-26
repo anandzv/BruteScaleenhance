@@ -45,9 +45,11 @@ const NAV_GROUPS = [
   {
     label: "Editors",
     items: [
-      { id: "homepage", label: "Homepage",      icon: Home },
-      { id: "ddos",     label: "DDoS Editor",   icon: Shield },
-      { id: "network",  label: "Network",       icon: Globe },
+      { id: "homepage",   label: "Homepage",           icon: Home },
+      { id: "ddos",       label: "DDoS Page",          icon: Shield },
+      { id: "minecraft",  label: "Minecraft Hosting",  icon: Server },
+      { id: "vps",        label: "VPS / RDP",          icon: Globe },
+      { id: "network",    label: "Network",             icon: Globe },
     ],
   },
   {
@@ -411,6 +413,52 @@ export default function Admin() {
     { key: "ddos_cta_subtitle",  label: "CTA Subtitle",       textarea: true, rows: 2, placeholder: "Join thousands of..." },
   ];
 
+  const minecraftFields = [
+    { key: "mc_hero_title",      label: "Hero Title",           placeholder: "Minecraft Hosting" },
+    { key: "mc_hero_subtitle",   label: "Hero Subtitle",        textarea: true, rows: 2, placeholder: "High-performance Minecraft servers..." },
+    { key: "mc_badge",           label: "Badge Text",           placeholder: "Trusted by 1000+ servers" },
+    { key: "mc_cta_btn",         label: "CTA Button Text",      placeholder: "Deploy Your Server" },
+    { key: "mc_cta_btn_url",     label: "CTA Button URL",       placeholder: "https://panel.brutescale.com" },
+    { key: "mc_feature1",        label: "Feature 1",            placeholder: "NVMe SSD Storage" },
+    { key: "mc_feature2",        label: "Feature 2",            placeholder: "Unlimited Bandwidth" },
+    { key: "mc_feature3",        label: "Feature 3",            placeholder: "DDoS Protection" },
+    { key: "mc_feature4",        label: "Feature 4",            placeholder: "Pterodactyl Panel" },
+    { key: "mc_stat1_value",     label: "Stat 1 Value",         placeholder: "1000+" },
+    { key: "mc_stat1_label",     label: "Stat 1 Label",         placeholder: "Active Servers" },
+    { key: "mc_stat2_value",     label: "Stat 2 Value",         placeholder: "99.9%" },
+    { key: "mc_stat2_label",     label: "Stat 2 Label",         placeholder: "Uptime SLA" },
+    { key: "mc_stat3_value",     label: "Stat 3 Value",         placeholder: "<10ms" },
+    { key: "mc_stat3_label",     label: "Stat 3 Label",         placeholder: "Avg Ping" },
+    { key: "mc_faq1_q",          label: "FAQ 1 Question",       placeholder: "What control panel do you use?" },
+    { key: "mc_faq1_a",          label: "FAQ 1 Answer",         textarea: true, rows: 2, placeholder: "We use Pterodactyl..." },
+    { key: "mc_faq2_q",          label: "FAQ 2 Question",       placeholder: "Do you offer refunds?" },
+    { key: "mc_faq2_a",          label: "FAQ 2 Answer",         textarea: true, rows: 2, placeholder: "Yes, we offer a 3-day money-back guarantee." },
+  ];
+
+  const vpsFields = [
+    { key: "vps_hero_title",     label: "Hero Title",           placeholder: "VPS / RDP Hosting" },
+    { key: "vps_hero_subtitle",  label: "Hero Subtitle",        textarea: true, rows: 2, placeholder: "Enterprise-grade VPS and RDP solutions..." },
+    { key: "vps_badge",          label: "Badge Text",           placeholder: "Full Root Access • 99.99% Uptime" },
+    { key: "vps_cta_btn",        label: "CTA Button Text",      placeholder: "Get Started" },
+    { key: "vps_cta_btn_url",    label: "CTA Button URL",       placeholder: "https://panel.brutescale.com" },
+    { key: "vps_feature1",       label: "Feature 1",            placeholder: "Full Root Access" },
+    { key: "vps_feature2",       label: "Feature 2",            placeholder: "KVM Virtualization" },
+    { key: "vps_feature3",       label: "Feature 3",            placeholder: "NVMe Gen4 SSD" },
+    { key: "vps_feature4",       label: "Feature 4",            placeholder: "Linux & Windows Support" },
+    { key: "vps_stat1_value",    label: "Stat 1 Value",         placeholder: "500+" },
+    { key: "vps_stat1_label",    label: "Stat 1 Label",         placeholder: "Active VPS" },
+    { key: "vps_stat2_value",    label: "Stat 2 Value",         placeholder: "99.99%" },
+    { key: "vps_stat2_label",    label: "Stat 2 Label",         placeholder: "Uptime SLA" },
+    { key: "vps_stat3_value",    label: "Stat 3 Value",         placeholder: "1Gbps" },
+    { key: "vps_stat3_label",    label: "Stat 3 Label",         placeholder: "Network Speed" },
+    { key: "vps_rdp_title",      label: "RDP Section Title",    placeholder: "Windows RDP Servers" },
+    { key: "vps_rdp_subtitle",   label: "RDP Section Subtitle", textarea: true, rows: 2, placeholder: "Full Windows desktop access..." },
+    { key: "vps_faq1_q",         label: "FAQ 1 Question",       placeholder: "What OS options are available?" },
+    { key: "vps_faq1_a",         label: "FAQ 1 Answer",         textarea: true, rows: 2, placeholder: "We support Ubuntu, Debian, CentOS, Windows..." },
+    { key: "vps_faq2_q",         label: "FAQ 2 Question",       placeholder: "Is root access included?" },
+    { key: "vps_faq2_a",         label: "FAQ 2 Answer",         textarea: true, rows: 2, placeholder: "Yes, all VPS plans include full root access." },
+  ];
+
   const networkFields = [
     { key: "dc_india_status",      label: "India Status",     placeholder: "Online" },
     { key: "dc_india_uptime",      label: "India Uptime",     placeholder: "99.99%" },
@@ -457,6 +505,14 @@ export default function Admin() {
         return <SettingsSection title="DDoS Page Editor" subtitle="Edit the DDoS protection page hero, stats, and CTA"
           fields={ddosFields} values={settings} onChange={setSetting}
           onSave={() => saveSettings(ddosFields.map(f => f.key), "DDoS Page Settings Updated")} saving={saving} />;
+      case "minecraft":
+        return <SettingsSection title="Minecraft Hosting Editor" subtitle="Edit hero, features, stats, FAQ and CTA for the Minecraft Hosting page"
+          fields={minecraftFields} values={settings} onChange={setSetting}
+          onSave={() => saveSettings(minecraftFields.map(f => f.key), "Minecraft Hosting Settings Updated")} saving={saving} />;
+      case "vps":
+        return <SettingsSection title="VPS / RDP Editor" subtitle="Edit hero, features, stats, FAQ and CTA for the VPS/RDP Hosting page"
+          fields={vpsFields} values={settings} onChange={setSetting}
+          onSave={() => saveSettings(vpsFields.map(f => f.key), "VPS/RDP Settings Updated")} saving={saving} />;
       case "network":
         return <SettingsSection title="Network Locations" subtitle="Manage datacenter status and latency"
           fields={networkFields} values={settings} onChange={setSetting}
