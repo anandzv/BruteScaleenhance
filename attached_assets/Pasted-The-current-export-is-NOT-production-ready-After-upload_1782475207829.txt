@@ -1,0 +1,308 @@
+The current export is NOT production ready.
+
+After uploading the ZIP to a clean Pterodactyl Node.js server and extracting it, the project crashes.
+
+Current errors include:
+- package-firewall.replit.local
+- Replit registry references
+- Missing dependencies (dotenv etc.)
+- Production startup failures
+
+I need a REAL production-ready standalone Node.js application.
+
+DO NOT simply export the project again.
+
+Actually rebuild the project so it runs outside Replit.
+
+==================================================
+GOAL
+==================================================
+
+I should be able to:
+
+1. Upload ZIP
+2. Extract it
+3. Run npm install
+4. Run npm run build
+5. Run npm start
+
+and the website must work with ZERO manual code changes.
+
+==================================================
+REMOVE ALL REPLIT DEPENDENCIES
+==================================================
+
+Remove EVERYTHING related to Replit including:
+
+- Replit plugins
+- Replit auth
+- Replit registry
+- package-firewall.replit.local
+- .replit
+- replit.nix
+- @replit/*
+- replit runtime packages
+- Replit-only build scripts
+- workspace packages
+- monorepo references
+- internal catalog dependencies
+- workspace:* dependencies
+
+Generate a completely standard Node.js project.
+
+==================================================
+PACKAGE.JSON
+==================================================
+
+Create a normal package.json.
+
+Every dependency must come from the public npm registry.
+
+No workspace packages.
+
+No catalog dependencies.
+
+No @workspace packages.
+
+No Replit packages.
+
+No local package references.
+
+Everything must install using:
+
+npm install
+
+on a completely empty Linux machine.
+
+==================================================
+DEPENDENCIES
+==================================================
+
+Verify every required dependency exists including but not limited to:
+
+dotenv
+express
+cors
+compression
+helmet
+jsonwebtoken
+bcryptjs
+drizzle
+better-sqlite3
+react
+react-dom
+vite
+
+and every dependency actually used by the project.
+
+No missing package should remain.
+
+==================================================
+LOCK FILE
+==================================================
+
+Delete old lock files.
+
+Generate a fresh package-lock.json from npm.
+
+Remove every pnpm workspace reference.
+
+Remove pnpm-workspace.yaml if no longer needed.
+
+==================================================
+NPMRC
+==================================================
+
+Delete every .npmrc referencing Replit.
+
+Delete every custom registry.
+
+Use only
+
+https://registry.npmjs.org
+
+==================================================
+SERVER
+==================================================
+
+The server must:
+
+listen on
+
+process.env.PORT || 3000
+
+listen on
+
+0.0.0.0
+
+Serve:
+
+Frontend
+API
+Admin Panel
+Uploads
+Images
+
+==================================================
+ROUTING
+==================================================
+
+Refreshing ANY page must never return 404.
+
+Configure Express SPA fallback correctly.
+
+Routes include:
+
+/
+services
+docs
+minecraft-hosting
+vps
+network
+about
+ddos
+reviews
+login
+register
+admin
+
+==================================================
+ADMIN PANEL
+==================================================
+
+Keep everything.
+
+Do NOT remove admin.
+
+Admin login:
+
+ipc23771@gmail.com
+
+Password:
+
+ipc23771
+
+Admin features must remain:
+
+Dashboard
+
+Hosting Plans
+
+Reviews
+
+Homepage Editor
+
+DDoS Editor
+
+Docs Editor
+
+Users
+
+Settings
+
+Uploads
+
+==================================================
+DATABASE
+==================================================
+
+Automatically initialize.
+
+Automatically create tables if missing.
+
+No manual SQL.
+
+==================================================
+UPLOADS
+==================================================
+
+Automatically create upload directories.
+
+Uploaded images must persist.
+
+==================================================
+BUILD
+==================================================
+
+The project must build using:
+
+npm install
+
+npm run build
+
+npm start
+
+No extra commands.
+
+==================================================
+PTERODACTYL
+==================================================
+
+The final ZIP must run on a fresh Pterodactyl Node.js egg.
+
+Nothing should require Replit.
+
+Nothing should require workspace packages.
+
+Nothing should require pnpm.
+
+Nothing should require manual fixes.
+
+==================================================
+SELF TEST
+==================================================
+
+Before generating the ZIP actually verify:
+
+✓ npm install
+✓ npm run build
+✓ npm start
+✓ Homepage loads
+✓ Services work
+✓ Docs work
+✓ Reviews work
+✓ DDoS page works
+✓ Admin login works
+✓ Admin dashboard works
+✓ Image uploads work
+✓ Review uploads work
+✓ Plans CRUD works
+✓ No missing modules
+✓ No Replit dependency
+✓ No workspace dependency
+✓ No catalog dependency
+✓ No package-firewall.replit.local
+✓ No startup errors
+✓ No runtime errors
+✓ No build errors
+
+==================================================
+FINAL OUTPUT
+==================================================
+
+Create ONE folder named:
+
+production
+
+Inside include ONLY:
+
+server/
+dist/
+public/
+uploads/
+package.json
+package-lock.json
+.env.example
+README.md
+
+ZIP this production folder.
+
+The ZIP must be deployable directly to Pterodactyl with:
+
+npm install
+npm run build
+npm start
+
+without changing a single file.
+
+Do not finish until you have actually verified the project is production-ready.
